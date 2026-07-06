@@ -1,0 +1,22 @@
+---
+interface Button {
+  label: string;
+  href: string;
+  variant: 'primary' | 'secondary';
+}
+
+interface Props {
+  buttons: Button[];
+  wrapperClass?: string;
+}
+
+const { buttons, wrapperClass = 'hero-btns' } = Astro.props;
+---
+
+<div class={wrapperClass}>
+  {buttons.map((btn) => (
+    <a href={btn.href} class={btn.variant === 'primary' ? 'btn-primary' : 'btn-secondary'}>
+      {btn.label}
+    </a>
+  ))}
+</div>

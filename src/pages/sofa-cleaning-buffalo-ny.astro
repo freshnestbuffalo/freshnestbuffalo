@@ -1,0 +1,210 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Cta from '../components/Cta.astro';
+import Faq from '../components/Faq.astro';
+
+const faqItems = [
+  {
+    q: 'How much does sofa cleaning cost in Buffalo NY?',
+    a: 'Sofa and sectional cleaning starts at $89. The final price depends on the size and condition of the piece and is confirmed after a photo estimate.',
+  },
+  {
+    q: 'How long does sofa cleaning take?',
+    a: 'Most sofas are cleaned in under an hour, depending on size and soiling level.',
+  },
+  {
+    q: 'How long does a sofa take to dry?',
+    a: 'Most sofas dry in 4–8 hours depending on fabric, humidity and airflow.',
+  },
+  {
+    q: 'Can you remove pet urine from a sofa?',
+    a: 'Pet urine can often be treated, but results depend on how long the stain has set and the fabric type. This is explained honestly before cleaning begins.',
+  },
+  {
+    q: 'Can you remove every stain?',
+    a: 'No. Every fabric and stain is different — some stains can be removed completely, while others may only improve. Realistic expectations are explained before starting.',
+  },
+  {
+    q: 'Is sofa cleaning safe for kids and pets?',
+    a: 'Yes. All cleaning solutions used are eco-safe and safe around children and pets.',
+  },
+  {
+    q: 'Do I need to prepare before you arrive?',
+    a: 'No preparation is needed. All equipment and cleaning solutions are brought on-site.',
+  },
+  {
+    q: 'Can I send photos for an estimate?',
+    a: 'Yes. Sending photos through the contact form gives the most accurate price, usually confirmed within 30 minutes.',
+  },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Sofa Cleaning',
+  serviceType: 'Upholstery Cleaning',
+  url: 'https://freshnestbuffalo.com/sofa-cleaning-buffalo-ny.html',
+  provider: {
+    '@type': ['LocalBusiness', 'ProfessionalService'],
+    name: 'Fresh Nest Upholstery Cleaning',
+    telephone: '+17162046437',
+    email: 'freshnestbuffalo@gmail.com',
+    url: 'https://freshnestbuffalo.com/',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Buffalo' },
+    { '@type': 'City', name: 'Amherst' },
+    { '@type': 'City', name: 'Williamsville' },
+    { '@type': 'City', name: 'Clarence' },
+    { '@type': 'City', name: 'East Amherst' },
+    { '@type': 'City', name: 'Cheektowaga' },
+    { '@type': 'City', name: 'Lancaster' },
+    { '@type': 'City', name: 'Tonawanda' },
+    { '@type': 'City', name: 'West Seneca' },
+    { '@type': 'City', name: 'Orchard Park' },
+    { '@type': 'City', name: 'Depew' },
+  ],
+  offers: {
+    '@type': 'Offer',
+    priceSpecification: { '@type': 'PriceSpecification', price: '89', priceCurrency: 'USD' },
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://freshnestbuffalo.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Sofa Cleaning Buffalo NY', item: 'https://freshnestbuffalo.com/sofa-cleaning-buffalo-ny.html' },
+  ],
+};
+---
+
+<Layout
+  title="Sofa Cleaning Buffalo NY | Fresh Nest Upholstery Cleaning"
+  description="Professional sofa cleaning in Buffalo, NY. Owner-operated upholstery cleaning for fabric sofas, couches, stains, odors and everyday buildup. Free estimates."
+  canonical="https://freshnestbuffalo.com/sofa-cleaning-buffalo-ny.html"
+  extraSchemas={[serviceSchema, breadcrumbSchema]}
+>
+  <div class="hero" id="home">
+    <div class="hero-left">
+      <div class="badge">Owner-operated · Buffalo, NY</div>
+      <h1>Professional<br /><em>Sofa Cleaning</em><br />in Buffalo, NY</h1>
+      <p class="hero-sub">Professional sofa cleaning in Buffalo, NY from an owner-operated service. Eco-safe products, safe for kids and pets. Free estimates, same-day available.</p>
+      <Cta
+        buttons={[
+          { label: 'Call Now', href: 'tel:+17162046437', variant: 'primary' },
+          { label: 'Get Free Estimate', href: '/#contact', variant: 'secondary' },
+        ]}
+      />
+      <div class="hero-stats">
+        <div><div class="stat-num">100%</div><div class="stat-label">Eco-safe products</div></div>
+        <div><div class="stat-num">Same day</div><div class="stat-label">Available 7 days</div></div>
+        <div><div class="stat-num">Free</div><div class="stat-label">Estimates</div></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="/images/owner.png" alt="Fresh Nest Upholstery Cleaning owner performing sofa cleaning in Buffalo, NY" />
+    </div>
+  </div>
+
+  <section id="why" class="bg-white">
+    <p class="eyebrow">Why it matters</p>
+    <h2 class="sec-title">Why Clean Your Sofa Professionally</h2>
+    <p class="sec-sub">Sofas absorb more daily wear than almost any other piece of furniture in the house.</p>
+    <div class="trust-grid">
+      <div class="trust-card"><div class="trust-card-title">Dirt</div><div class="trust-card-desc">Ground-in dirt settles deep into fabric fibers over time.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Body Oils</div><div class="trust-card-desc">Daily use leaves body oils that dull fabric color and texture.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Pet Hair</div><div class="trust-card-desc">Pet hair and dander build up in the weave of the fabric.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Odors</div><div class="trust-card-desc">Everyday odors accumulate in upholstery fibers over months of use.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Allergens</div><div class="trust-card-desc">Dust mites and allergens collect in cushions and seams.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Food Spills</div><div class="trust-card-desc">Spills can leave residue and stains if left untreated.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Everyday Buildup</div><div class="trust-card-desc">Regular use gradually builds up soil that vacuuming alone can't remove.</div></div>
+    </div>
+  </section>
+
+  <section id="included" class="bg-tint">
+    <p class="eyebrow">Our process</p>
+    <h2 class="sec-title">What's Included</h2>
+    <p class="sec-sub">Every sofa cleaning follows the same professional process.</p>
+    <div class="proc-grid">
+      <div class="proc"><div class="proc-num">1</div><div class="proc-title">Fabric Inspection</div><div class="proc-desc">Checking fabric type and condition before starting.</div></div>
+      <div class="proc"><div class="proc-num">2</div><div class="proc-title">Vacuuming</div><div class="proc-desc">Dry soil removal to prepare the fabric for cleaning.</div></div>
+      <div class="proc"><div class="proc-num">3</div><div class="proc-title">Pre-Treatment</div><div class="proc-desc">Targeted treatment applied to stains and heavily soiled areas.</div></div>
+      <div class="proc"><div class="proc-num">4</div><div class="proc-title">Gentle Agitation</div><div class="proc-desc">Working the treatment into the fabric without damaging fibers.</div></div>
+      <div class="proc"><div class="proc-num">5</div><div class="proc-title">Hot Water Extraction</div><div class="proc-desc">Professional Mytee equipment lifts dirt and residue from deep in the fabric.</div></div>
+      <div class="proc"><div class="proc-num">6</div><div class="proc-title">Rinse</div><div class="proc-desc">Rinsing to remove any remaining cleaning solution.</div></div>
+      <div class="proc"><div class="proc-num">7</div><div class="proc-title">Drying Guidance</div><div class="proc-desc">Advice on airflow and drying time before using the sofa again.</div></div>
+    </div>
+  </section>
+
+  <section id="problems" class="bg-white">
+    <p class="eyebrow">What we treat</p>
+    <h2 class="sec-title">Common Sofa Problems We Treat</h2>
+    <p class="sec-sub">Every fabric and stain responds differently to treatment.</p>
+    <div class="trust-grid">
+      <div class="trust-card"><div class="trust-card-title">Pet Odor</div><div class="trust-card-desc">Treated with targeted pre-treatment before extraction.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Coffee Stains</div><div class="trust-card-desc">Common household stain treated during pre-treatment.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Food Stains</div><div class="trust-card-desc">Spot-treated based on fabric type and stain age.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Body Oils</div><div class="trust-card-desc">Broken down during pre-treatment and hot water extraction.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Dust & Allergens</div><div class="trust-card-desc">Reduced through vacuuming and hot water extraction.</div></div>
+      <div class="trust-card"><div class="trust-card-title">General Dirt</div><div class="trust-card-desc">Lifted from deep in the fabric with professional equipment.</div></div>
+    </div>
+  </section>
+
+  <section id="expectations" class="bg-tint">
+    <p class="eyebrow">Honesty first</p>
+    <h2 class="sec-title">Honest Expectations</h2>
+    <div class="guarantee-box">
+      <h3>Realistic Results, Explained Upfront</h3>
+      <p>Every fabric and stain is different. Some stains can be removed completely, while others may only improve.</p>
+      <p>Fresh Nest always explains realistic expectations before cleaning begins.</p>
+    </div>
+  </section>
+
+  <section id="drying" class="bg-white">
+    <p class="eyebrow">Drying time</p>
+    <h2 class="sec-title">How Long It Takes To Dry</h2>
+    <p class="sec-sub">Most sofas dry in 4–8 hours depending on fabric, humidity and airflow.</p>
+  </section>
+
+  <section id="areas" class="bg-tint">
+    <p class="eyebrow">Where we work</p>
+    <h2 class="sec-title">Service Area</h2>
+    <p class="sec-sub">Sofa cleaning is available throughout Buffalo, NY and the surrounding Western New York suburbs.</p>
+    <div class="area-chips">
+      <span class="area-chip">Buffalo</span>
+      <span class="area-chip">Amherst</span>
+      <span class="area-chip">Williamsville</span>
+      <span class="area-chip">Clarence</span>
+      <span class="area-chip">East Amherst</span>
+      <span class="area-chip">Cheektowaga</span>
+      <span class="area-chip">Lancaster</span>
+      <span class="area-chip">Tonawanda</span>
+      <span class="area-chip">West Seneca</span>
+      <span class="area-chip">Orchard Park</span>
+      <span class="area-chip">Depew</span>
+    </div>
+  </section>
+
+  <section id="faq" class="bg-white">
+    <p class="eyebrow">Questions</p>
+    <h2 class="sec-title">Frequently Asked Questions</h2>
+    <p class="sec-sub">Straight answers before you book.</p>
+    <Faq items={faqItems} />
+  </section>
+
+  <section id="final-cta" class="bg-tint">
+    <p class="eyebrow">Ready to start?</p>
+    <h2 class="sec-title">Get Your Sofa Professionally Cleaned</h2>
+    <p class="sec-sub">Same-day appointments available in most cases. Free, no-obligation estimates.</p>
+    <Cta
+      wrapperClass="cta-btns"
+      buttons={[
+        { label: 'Call Now', href: 'tel:+17162046437', variant: 'primary' },
+        { label: 'Get Free Estimate', href: '/#contact', variant: 'secondary' },
+        { label: 'Send Photos', href: '/#contact', variant: 'secondary' },
+      ]}
+    />
+  </section>
+</Layout>

@@ -1,0 +1,57 @@
+---
+// Single source of truth for business data used in JSON-LD schema.
+// Same on every page — nothing here is page-specific.
+const schema = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "ProfessionalService"],
+  "@id": "https://freshnestbuffalo.com/#business",
+  "name": "Fresh Nest Upholstery Cleaning",
+  "image": "https://freshnestbuffalo.com/images/owner.png",
+  "url": "https://freshnestbuffalo.com/",
+  "telephone": "+17162046437",
+  "email": "freshnestbuffalo@gmail.com",
+  "priceRange": "$$",
+  "areaServed": [
+    { "@type": "City", "name": "Buffalo" },
+    { "@type": "City", "name": "Amherst" },
+    { "@type": "City", "name": "Williamsville" },
+    { "@type": "City", "name": "Clarence" },
+    { "@type": "City", "name": "Clarence Center" },
+    { "@type": "City", "name": "East Amherst" },
+    { "@type": "City", "name": "Cheektowaga" },
+    { "@type": "City", "name": "Lancaster" },
+    { "@type": "City", "name": "Tonawanda" },
+    { "@type": "City", "name": "West Seneca" },
+    { "@type": "City", "name": "Orchard Park" },
+    { "@type": "City", "name": "Depew" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Upholstery Cleaning Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "Sofa & Sectional Cleaning" },
+        "priceSpecification": { "@type": "PriceSpecification", "price": "89", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "Chair & Armchair Cleaning" },
+        "priceSpecification": { "@type": "PriceSpecification", "price": "49", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "Mattress Cleaning" },
+        "priceSpecification": { "@type": "PriceSpecification", "price": "69", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "Car Interior Cleaning" },
+        "priceSpecification": { "@type": "PriceSpecification", "price": "79", "priceCurrency": "USD" }
+      }
+    ]
+  }
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

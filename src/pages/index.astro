@@ -1,0 +1,267 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Cta from '../components/Cta.astro';
+import Faq from '../components/Faq.astro';
+
+const faqItems = [
+  {
+    q: 'How much does upholstery cleaning cost in Buffalo, NY?',
+    a: 'Prices start at $49 for a chair, $69 for a mattress, $79 for a car interior, and $89 for a sofa or sectional. The final price depends on the size and condition of the piece and is confirmed after a photo estimate.',
+  },
+  {
+    q: 'How long does upholstery take to dry after cleaning?',
+    a: 'Most furniture dries within 2–4 hours using professional hot water extraction equipment.',
+  },
+  {
+    q: 'Do you offer same-day service?',
+    a: "Same-day appointments are available in most cases, depending on the day's schedule.",
+  },
+  {
+    q: 'Is the cleaning process safe for kids and pets?',
+    a: 'Yes. All cleaning solutions used are eco-safe and chosen to be safe around children and pets.',
+  },
+  {
+    q: 'Do I need to prepare anything before you arrive?',
+    a: 'No preparation is needed. I bring all equipment and cleaning solutions and handle everything on-site.',
+  },
+  {
+    q: 'What areas do you serve near Buffalo, NY?',
+    a: 'Buffalo, Amherst, Williamsville, Clarence, Clarence Center, East Amherst, Cheektowaga, Lancaster, Tonawanda, West Seneca, Orchard Park, and Depew.',
+  },
+  {
+    q: 'How do I get a quote?',
+    a: "Fill out the contact form with a few photos of your furniture. You'll get a price and available time slots within 30 minutes.",
+  },
+  {
+    q: 'What equipment do you use?',
+    a: 'Professional Mytee hot water extraction equipment, the same standard used by upholstery cleaning professionals.',
+  },
+  {
+    q: "What if I'm not satisfied with the cleaning?",
+    a: "Every fabric and stain is different, so I never promise impossible results — before starting, I'll explain what can realistically be expected. If you're not satisfied, I'll review the issue with you and do my best to make it right.",
+  },
+  {
+    q: 'Do you clean car interiors as well?',
+    a: 'Yes, car interior upholstery cleaning is available starting at $79.',
+  },
+];
+
+const formspreeId = import.meta.env.PUBLIC_FORMSPREE_ID;
+if (!formspreeId) {
+  console.warn(
+    '[fresh-nest] PUBLIC_FORMSPREE_ID is not set. The contact form action will be incomplete. ' +
+    'Set it in .env for local builds, or in Cloudflare Pages -> Settings -> Environment Variables for production.'
+  );
+}
+const formAction = `https://formspree.io/f/${formspreeId ?? ''}`;
+---
+
+<Layout
+  title="Upholstery Cleaning Buffalo NY | Fresh Nest Upholstery Cleaning"
+  description="Owner-operated upholstery cleaning in Buffalo, NY. Sofas, sectionals, mattresses & car seats cleaned eco-safe — safe for kids & pets. Free estimates today."
+  canonical="https://freshnestbuffalo.com/"
+>
+  <div class="hero" id="home">
+    <div class="hero-left">
+      <div class="badge">Owner-operated · Buffalo, NY</div>
+      <h1>Buffalo, NY<br /><em>Upholstery Cleaning</em><br />You Can Trust</h1>
+      <p class="hero-sub">Professional sofa, chair, mattress and car seat cleaning. I come to you with all equipment — same-day available.</p>
+      <Cta
+        buttons={[
+          { label: 'Get free estimate', href: '/#contact', variant: 'primary' },
+          { label: 'Call (716) 204-6437', href: 'tel:+17162046437', variant: 'secondary' },
+        ]}
+      />
+      <div class="hero-stats">
+        <div><div class="stat-num">100%</div><div class="stat-label">Eco-safe products</div></div>
+        <div><div class="stat-num">Same day</div><div class="stat-label">Available 7 days</div></div>
+        <div><div class="stat-num">Free</div><div class="stat-label">Estimates</div></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="/images/owner.png" alt="Fresh Nest Upholstery Cleaning owner at work in Buffalo NY" />
+    </div>
+  </div>
+
+  <section id="services" class="bg-white">
+    <p class="eyebrow">What we clean</p>
+    <h2 class="sec-title">Our Services</h2>
+    <p class="sec-sub">Every job is done by the owner. Final price depends on size and condition.</p>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <div class="svc-card-name"><a href="/sofa-cleaning-buffalo-ny.html" style="color:inherit;text-decoration:none">Sofa &<br />Sectional</a></div>
+        <div class="svc-card-price">Starts at $89</div>
+        <div class="svc-card-desc">Final price depends on size and condition.</div>
+        <img src="/images/sofa.png" alt="Sofa and sectional upholstery cleaning icon" class="svc-card-img" width="120" height="120" loading="lazy" />
+        <a href="/#contact" class="btn-quote">Get Quote</a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-card-name">Chair &<br />Armchair</div>
+        <div class="svc-card-price">Starts at $49</div>
+        <div class="svc-card-desc">Final price depends on size and condition.</div>
+        <img src="/images/chair.png" alt="Chair and armchair upholstery cleaning icon" class="svc-card-img" width="120" height="120" loading="lazy" />
+        <a href="/#contact" class="btn-quote">Get Quote</a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-card-name">Mattress<br />Cleaning</div>
+        <div class="svc-card-price">Starts at $69</div>
+        <div class="svc-card-desc">Final price depends on size and condition.</div>
+        <img src="/images/mattress.png" alt="Mattress upholstery cleaning icon" class="svc-card-img" width="120" height="120" loading="lazy" />
+        <a href="/#contact" class="btn-quote">Get Quote</a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-card-name">Car Interior<br />Cleaning</div>
+        <div class="svc-card-price">Starts at $79</div>
+        <div class="svc-card-desc">Final price depends on size and condition.</div>
+        <img src="/images/car.png" alt="Car interior upholstery cleaning icon" class="svc-card-img" width="120" height="120" loading="lazy" />
+        <a href="/#contact" class="btn-quote">Get Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="trust" class="bg-white">
+    <p class="eyebrow">Why Fresh Nest</p>
+    <h2 class="sec-title">Built On Trust, Not Promises</h2>
+    <p class="sec-sub">What you're actually getting when you book a cleaning.</p>
+    <div class="trust-grid">
+      <div class="trust-card"><div class="trust-card-title">Owner-Operated</div><div class="trust-card-desc">Every job is done personally by the owner — not a rotating crew.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Professional Equipment</div><div class="trust-card-desc">Mytee hot water extraction equipment, the professional-grade standard.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Eco-Safe Products</div><div class="trust-card-desc">Cleaning solutions chosen to be safe around kids and pets.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Transparent Pricing</div><div class="trust-card-desc">Price confirmed upfront from photos — no surprises on arrival.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Fast Response</div><div class="trust-card-desc">Quotes within 30 minutes, same-day appointments in most cases.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Free Estimates</div><div class="trust-card-desc">No cost and no obligation to find out your price.</div></div>
+    </div>
+    <div class="guarantee-box">
+      <h3>Honest Service Guarantee</h3>
+      <p>Every fabric and stain is different, so I never promise impossible results.</p>
+      <p>Before starting, I explain what can realistically be expected.</p>
+      <p>If you are not satisfied with the cleaning, I will review the issue with you and do my best to make it right.</p>
+    </div>
+  </section>
+
+  <section id="gallery" class="bg-tint">
+    <p class="eyebrow">Results</p>
+    <h2 class="sec-title">Before & After</h2>
+    <p class="sec-sub">Real results from real clients in Buffalo, NY.</p>
+    <div class="ba-grid">
+      <div class="ba-card">
+        <div class="ba-imgs">
+          <div class="ba-side"><img src="/images/chair1-before.jpg" alt="Chair before upholstery cleaning in Buffalo, NY" loading="lazy" /><div class="ba-lbl">Before</div></div>
+          <div class="ba-side"><img src="/images/chair1-after.jpg" alt="Chair after professional upholstery cleaning in Buffalo, NY" loading="lazy" /><div class="ba-lbl">After</div></div>
+        </div>
+        <div class="ba-cap">Chair cleaning · Buffalo, NY</div>
+      </div>
+      <div class="ba-card">
+        <div class="ba-imgs">
+          <div class="ba-side"><img src="/images/chair2-before.jpg" alt="Armchair before upholstery cleaning in Amherst, NY" loading="lazy" /><div class="ba-lbl">Before</div></div>
+          <div class="ba-side"><img src="/images/chair2-after.jpg" alt="Armchair after professional upholstery cleaning in Amherst, NY" loading="lazy" /><div class="ba-lbl">After</div></div>
+        </div>
+        <div class="ba-cap">Armchair cleaning · Amherst, NY</div>
+      </div>
+      <div class="ba-card">
+        <div class="ba-imgs">
+          <div class="ba-side"><img src="/images/chair3-before.jpg" alt="Chair before upholstery cleaning in Cheektowaga, NY" loading="lazy" /><div class="ba-lbl">Before</div></div>
+          <div class="ba-side"><img src="/images/chair3-after.jpg" alt="Chair after professional upholstery cleaning in Cheektowaga, NY" loading="lazy" /><div class="ba-lbl">After</div></div>
+        </div>
+        <div class="ba-cap">Chair cleaning · Cheektowaga, NY</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="bg-white">
+    <p class="eyebrow">How it works</p>
+    <h2 class="sec-title">4 Simple Steps</h2>
+    <div class="proc-grid">
+      <div class="proc"><div class="proc-num">1</div><div class="proc-title">Send a few photos</div><div class="proc-desc">Fill the form and attach photos of your furniture for an accurate estimate.</div></div>
+      <div class="proc"><div class="proc-num">2</div><div class="proc-title">Get your quote</div><div class="proc-desc">I'll get back to you within 30 minutes with a price and available time slots.</div></div>
+      <div class="proc"><div class="proc-num">3</div><div class="proc-title">I come to you</div><div class="proc-desc">I arrive with all equipment and eco-safe cleaning solutions. No prep needed.</div></div>
+      <div class="proc"><div class="proc-num">4</div><div class="proc-title">Enjoy clean furniture</div><div class="proc-desc">Dries in 2–4 hours. You'll see the difference immediately.</div></div>
+    </div>
+  </section>
+
+  <section id="faq" class="bg-tint">
+    <p class="eyebrow">Questions</p>
+    <h2 class="sec-title">Frequently Asked Questions</h2>
+    <p class="sec-sub">Straight answers before you book.</p>
+    <Faq items={faqItems} />
+  </section>
+
+  <section id="areas" class="bg-white">
+    <p class="eyebrow">Where we work</p>
+    <h2 class="sec-title">Service Area</h2>
+    <p class="sec-sub">Fresh Nest provides upholstery cleaning throughout Buffalo, NY and the surrounding Western New York suburbs. If your town isn't listed below, call or text to check availability.</p>
+    <div class="area-chips">
+      <span class="area-chip">Buffalo</span>
+      <span class="area-chip">Amherst</span>
+      <span class="area-chip">Williamsville</span>
+      <span class="area-chip">Clarence</span>
+      <span class="area-chip">Clarence Center</span>
+      <span class="area-chip">East Amherst</span>
+      <span class="area-chip">Cheektowaga</span>
+      <span class="area-chip">Lancaster</span>
+      <span class="area-chip">Tonawanda</span>
+      <span class="area-chip">West Seneca</span>
+      <span class="area-chip">Orchard Park</span>
+      <span class="area-chip">Depew</span>
+    </div>
+  </section>
+
+  <section id="contact" class="bg-tint">
+    <p class="eyebrow">Get in touch</p>
+    <div class="contact-wrap">
+      <div class="contact-info">
+        <h2>Request a Free Estimate</h2>
+        <p>Send a few details and I'll get back to you within 30 minutes with a price. Serving Buffalo and all surrounding areas 7 days a week.</p>
+        <a href="tel:+17162046437" class="contact-tel">(716) 204-6437</a>
+        <p class="contact-note">Call or text anytime</p>
+        <a href="mailto:freshnestbuffalo@gmail.com" class="contact-email">freshnestbuffalo@gmail.com</a>
+      </div>
+      <div class="c-form">
+        <h3>Send a message</h3>
+        <form id="form" method="POST" action={formAction} enctype="multipart/form-data">
+          <input type="hidden" name="_subject" value="New estimate request — Fresh Nest" />
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+          <div class="frow">
+            <div class="fg"><label for="f-name">Name</label><input type="text" id="f-name" name="name" placeholder="John Smith" required /></div>
+            <div class="fg"><label for="f-phone">Phone</label><input type="tel" id="f-phone" name="phone" placeholder="(716) 000-0000" required /></div>
+          </div>
+          <div class="fg"><label for="f-service">Service needed</label>
+            <select id="f-service" name="service" required>
+              <option value="">Select a service</option>
+              <option>Sofa / Sectional Cleaning</option>
+              <option>Chair / Armchair Cleaning</option>
+              <option>Mattress Cleaning</option>
+              <option>Car Interior Cleaning</option>
+              <option>Multiple items</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="fg"><label for="f-zip">ZIP code</label><input type="text" id="f-zip" name="zip" placeholder="14201" maxlength="5" /></div>
+          <div class="upload" onclick="document.getElementById('photos').click()">
+            <input type="file" id="photos" name="photos" multiple accept="image/*" onchange="showFiles(this)" />
+            <div class="upload-icon" aria-hidden="true">📎</div>
+            <div class="upload-txt"><strong>Upload photos</strong> for a more accurate estimate</div>
+            <div id="fnames" style="font-size:12px;color:#40916C;margin-top:4px"></div>
+          </div>
+          <div class="fg"><label for="f-message">Message (optional)</label><textarea id="f-message" name="message" placeholder="Describe your furniture, any stains or specific concerns..."></textarea></div>
+          <button type="submit" class="btn-submit">GET MY ESTIMATE →</button>
+          <p class="form-note">We respond within 30 minutes · No spam ever</p>
+        </form>
+        <div class="success" id="success">
+          <div style="font-size:48px;margin-bottom:1rem" aria-hidden="true">✅</div>
+          <h3>Message sent!</h3>
+          <p style="color:#888;font-size:15px;margin-top:.5rem">I'll get back to you within 30 minutes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  function showFiles(input: HTMLInputElement) {
+    const el = document.getElementById('fnames');
+    if (el) el.textContent = Array.from(input.files ?? []).map((f) => f.name).join(', ');
+  }
+  // @ts-expect-error - exposed for the inline onchange handler
+  window.showFiles = showFiles;
+</script>
