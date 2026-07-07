@@ -20,7 +20,11 @@ src/
     Faq.astro                — renders visible FAQ accordion AND FAQPage schema from one array
   pages/
     index.astro                     → /index.html  (homepage)
-    sofa-cleaning-buffalo-ny.astro   → /sofa-cleaning-buffalo-ny.html
+    sofa-cleaning-buffalo-ny.astro   → /sofa-cleaning-buffalo-ny.html, served by
+                                       Cloudflare Pages at /sofa-cleaning-buffalo-ny
+                                       (Cloudflare auto-redirects .html -> extensionless;
+                                       this is why build.format stays 'file' in
+                                       astro.config.mjs -- see comment there)
   styles/
     global.css              — entire site CSS, unchanged rules, only section backgrounds
                                moved from ID-selectors to .bg-white / .bg-tint utility classes

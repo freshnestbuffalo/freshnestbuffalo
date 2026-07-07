@@ -20,7 +20,7 @@ Website: https://freshnestbuffalo.com
 
 Pages:
 - / — homepage, all services
-- /sofa-cleaning-buffalo-ny.html — Sofa Cleaning Buffalo NY (dedicated service page)
+- /sofa-cleaning-buffalo-ny — Sofa Cleaning Buffalo NY (dedicated service page)
 
 Notes:
 - Owner-operated — every job performed personally by the owner.
