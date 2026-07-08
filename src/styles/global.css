@@ -15,10 +15,12 @@ nav{position:fixed;top:0;left:0;right:0;height:68px;background:rgba(255,255,255,
 .logo-text b span{color:#40916C}
 .logo-text small{font-size:12px;color:#888;font-weight:400}
 .nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
-.nav-links a{font-size:14px;font-weight:500;color:#6B6B62;text-decoration:none}
-.nav-links a:hover{color:#2D6A4F}
-.btn-book{background:#2D6A4F;color:#fff!important;padding:9px 22px;border-radius:100px}
-.btn-book:hover{background:#40916C!important}
+.nav-links a{font-size:14px;font-weight:500;color:#6B6B62;text-decoration:none;transition:color .2s ease}
+.btn-book{background:#2D6A4F;color:#fff!important;padding:9px 22px;border-radius:100px;transition:background .2s ease,transform .2s ease}
+@media(hover:hover){
+  .nav-links a:not(.btn-book):hover{color:#2D6A4F;text-decoration:underline;text-underline-offset:4px}
+  .btn-book:hover{background:#1B4332!important;transform:translateY(-1px)}
+}
 
 /* HERO */
 .hero{
@@ -40,10 +42,12 @@ nav{position:fixed;top:0;left:0;right:0;height:68px;background:rgba(255,255,255,
 .hero-left h1 em{font-style:normal;color:#40916C}
 .hero-sub{font-size:17px;color:#6B6B62;line-height:1.7;margin-bottom:2rem;max-width:420px}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:2.5rem}
-.btn-primary{background:#2D6A4F;color:#fff;padding:14px 30px;border-radius:100px;font-size:15px;font-weight:600;text-decoration:none;display:inline-block;transition:background .2s}
-.btn-primary:hover{background:#40916C}
-.btn-secondary{background:transparent;color:#1A1A18;padding:14px 30px;border-radius:100px;font-size:15px;font-weight:600;text-decoration:none;border:2px solid #E5E2DA;display:inline-block;transition:all .2s}
-.btn-secondary:hover{border-color:#2D6A4F;color:#2D6A4F}
+.btn-primary{background:#2D6A4F;color:#fff;padding:14px 30px;border-radius:100px;font-size:15px;font-weight:600;text-decoration:none;display:inline-block;transition:background .2s ease}
+.btn-secondary{background:transparent;color:#1A1A18;padding:14px 30px;border-radius:100px;font-size:15px;font-weight:600;text-decoration:none;border:2px solid #E5E2DA;display:inline-block;transition:all .2s ease}
+@media(hover:hover){
+  .btn-primary:hover{background:#1B4332}
+  .btn-secondary:hover{border-color:#2D6A4F;color:#2D6A4F;background:#D8F3DC}
+}
 .hero-stats{display:flex;gap:2.5rem}
 .stat-num{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1}
 .stat-label{font-size:13px;color:#888;margin-top:3px}
@@ -76,17 +80,24 @@ section{padding:80px 5%}
 
 /* SERVICES (homepage) */
 .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.svc-card{position:relative;background:#F2EFE9;border-radius:20px;padding:1.5rem;display:flex;flex-direction:column;transition:transform .2s}
-.svc-card:hover{transform:translateY(-4px)}
+.svc-card{position:relative;background:#F2EFE9;border-radius:20px;padding:1.5rem;display:flex;flex-direction:column;transition:transform .22s ease,box-shadow .22s ease}
+.svc-card--sofa{cursor:pointer}
 .svc-card-link{position:absolute;inset:0;border-radius:20px;z-index:1}
-.svc-card-link:focus-visible{outline:2px solid #2D6A4F;outline-offset:2px}
+.svc-card-link:focus-visible{outline:2px solid #2D6A4F;outline-offset:3px}
 .svc-card-name{position:relative;font-family:'Playfair Display',serif;font-size:17px;font-weight:700;text-transform:uppercase;line-height:1.2;margin-bottom:.4rem}
 .svc-card-price{position:relative;font-size:14px;font-weight:600;color:#2D6A4F;margin-bottom:.3rem}
 .svc-card-desc{position:relative;font-size:13px;color:#888;line-height:1.5;margin-bottom:auto}
-.svc-card-img{position:relative;width:120px;height:120px;object-fit:contain;align-self:flex-end;margin-top:1rem}
-.btn-quote{position:relative;z-index:2;display:inline-block;border:2px solid #1A1A18;color:#1A1A18;background:transparent;padding:9px 23px;border-radius:100px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;margin-top:1.25rem;transition:all .2s;cursor:pointer;font-family:'Inter',sans-serif}
-.btn-quote:hover{background:#1A1A18;color:#fff}
+.svc-card-img{position:relative;width:120px;height:120px;object-fit:contain;align-self:flex-end;margin-top:1rem;transition:transform .22s ease}
+.btn-quote{position:relative;z-index:2;display:inline-block;border:2px solid #1A1A18;color:#1A1A18;background:transparent;padding:9px 23px;border-radius:100px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;margin-top:1.25rem;transition:all .2s ease;cursor:pointer;font-family:'Inter',sans-serif}
+.quote-arrow{display:inline-block;transition:transform .22s ease}
 .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(hover:hover){
+  .svc-card:hover{transform:translateY(-4px)}
+  .svc-card--sofa:hover{box-shadow:0 16px 40px rgba(0,0,0,.08)}
+  .svc-card--sofa:hover .svc-card-img{transform:scale(1.03)}
+  .btn-quote:hover{background:#2D6A4F;border-color:#2D6A4F;color:#fff}
+  .btn-quote:hover .quote-arrow{transform:translateX(3px)}
+}
 
 /* TRUST / CARD GRID (shared) */
 #trust{padding-top:56px;padding-bottom:56px}
@@ -146,17 +157,22 @@ section{padding:80px 5%}
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .fg{margin-bottom:12px}
 .fg label{display:block;font-size:11px;font-weight:600;color:#888;letter-spacing:.07em;text-transform:uppercase;margin-bottom:5px}
-.fg input,.fg select,.fg textarea{width:100%;padding:11px 14px;border:1.5px solid #E5E2DA;border-radius:10px;font-size:14px;font-family:'Inter',sans-serif;color:#1A1A18;background:#fff;outline:none;transition:border-color .2s}
+.fg input,.fg select,.fg textarea{width:100%;padding:11px 14px;border:1.5px solid #E5E2DA;border-radius:10px;font-size:14px;font-family:'Inter',sans-serif;color:#1A1A18;background:#fff;outline:none;transition:border-color .2s ease}
 .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:#2D6A4F}
+.fg input:focus-visible,.fg select:focus-visible,.fg textarea:focus-visible{outline:2px solid #2D6A4F;outline-offset:3px}
 .fg textarea{min-height:80px;resize:vertical}
-.upload{border:2px dashed #E5E2DA;border-radius:10px;padding:1.25rem;text-align:center;cursor:pointer;transition:border-color .2s;margin-bottom:12px}
-.upload:hover{border-color:#2D6A4F}
+.upload{border:2px dashed #E5E2DA;border-radius:10px;padding:1.25rem;text-align:center;cursor:pointer;transition:border-color .2s ease;margin-bottom:12px}
+@media(hover:hover){
+  .upload:hover{border-color:#2D6A4F}
+}
 .upload input{display:none}
 .upload-icon{font-size:24px;margin-bottom:.35rem}
 .upload-txt{font-size:13px;color:#888}
 .upload-txt strong{color:#40916C}
-.btn-submit{width:100%;background:#2D6A4F;color:#fff;border:none;border-radius:100px;padding:14px;font-size:15px;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;transition:background .2s}
-.btn-submit:hover{background:#40916C}
+.btn-submit{width:100%;background:#2D6A4F;color:#fff;border:none;border-radius:100px;padding:14px;font-size:15px;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;transition:background .2s ease}
+@media(hover:hover){
+  .btn-submit:hover{background:#40916C}
+}
 .form-note{font-size:12px;color:#888;text-align:center;margin-top:8px}
 .success{display:none;text-align:center;padding:2rem}
 .success.show{display:block}
@@ -173,11 +189,28 @@ footer{background:#1A1A18;padding:2rem 5%;display:flex;justify-content:space-bet
 .foot-brand b span{color:#74C69D}
 .foot-brand small{font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:.06em}
 footer p{font-size:13px;color:rgba(255,255,255,0.45)}
-footer a{color:rgba(255,255,255,0.45);text-decoration:none}
-footer a:hover{color:#fff}
+footer a{color:rgba(255,255,255,0.45);text-decoration:none;transition:color .2s ease}
+@media(hover:hover){
+  footer a:hover{color:#74C69D}
+}
 
 /* STICKY MOBILE CTA */
 .sticky-cta{display:none}
+
+/* FOCUS STATES (Task 10, Final UI Polish) */
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible,
+.btn-quote:focus-visible,
+.btn-submit:focus-visible,
+.btn-book:focus-visible,
+.nav-links a:focus-visible,
+.contact-tel:focus-visible,
+.contact-email:focus-visible,
+footer a:focus-visible,
+.sticky-cta a:focus-visible{
+  outline:2px solid #2D6A4F;
+  outline-offset:3px;
+}
 
 /* MOBILE */
 @media(max-width:900px){
