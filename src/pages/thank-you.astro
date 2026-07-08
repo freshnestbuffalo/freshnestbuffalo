@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Cta from '../components/Cta.astro';
+---
+
+<Layout
+  title="Thank You | Fresh Nest Upholstery Cleaning"
+  description="Your request has been received. Fresh Nest Upholstery Cleaning will contact you shortly."
+  canonical="https://freshnestbuffalo.com/thank-you"
+>
+  <section id="final-cta" class="bg-tint">
+    <h1 class="sec-title">Thank you!</h1>
+    <p class="sec-sub">Your request has been received.<br />I usually reply within 30 minutes.</p>
+    <Cta
+      wrapperClass="cta-btns"
+      buttons={[
+        { label: 'Call (716) 204-6437', href: 'tel:+17162046437', variant: 'primary' },
+        { label: 'Back to Home', href: '/', variant: 'secondary' },
+      ]}
+    />
+  </section>
+</Layout>

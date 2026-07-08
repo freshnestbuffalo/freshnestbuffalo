@@ -46,14 +46,8 @@ const faqItems = [
   },
 ];
 
-const formspreeId = import.meta.env.PUBLIC_FORMSPREE_ID;
-if (!formspreeId) {
-  console.warn(
-    '[fresh-nest] PUBLIC_FORMSPREE_ID is not set. The contact form action will be incomplete. ' +
-    'Set it in .env for local builds, or in Cloudflare Pages -> Settings -> Environment Variables for production.'
-  );
-}
-const formAction = `https://formspree.io/f/${formspreeId ?? ''}`;
+const formspreeId = import.meta.env.PUBLIC_FORMSPREE_ID ?? 'xwvddlnz';
+const formAction = `https://formspree.io/f/${formspreeId}`;
 ---
 
 <Layout
@@ -228,7 +222,8 @@ const formAction = `https://formspree.io/f/${formspreeId ?? ''}`;
         </div>
         <h3>Send a message</h3>
         <form id="form" method="POST" action={formAction} enctype="multipart/form-data">
-          <input type="hidden" name="_subject" value="New estimate request — Fresh Nest" />
+          <input type="hidden" name="_subject" value="New Website Lead | Fresh Nest" />
+          <input type="hidden" name="_next" value="https://freshnestbuffalo.com/thank-you" />
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
           <div class="frow">
             <div class="fg"><label for="f-name">Name</label><input type="text" id="f-name" name="name" placeholder="John Smith" required /></div>
