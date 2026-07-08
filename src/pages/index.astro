@@ -88,34 +88,38 @@ const formAction = `https://formspree.io/f/${formspreeId ?? ''}`;
     <h2 class="sec-title">Our Services</h2>
     <p class="sec-sub">Every job is done by the owner. Final price depends on size and condition.</p>
     <div class="svc-grid">
-      <div class="svc-card">
-        <div class="svc-card-name"><a href="/sofa-cleaning-buffalo-ny" style="color:inherit;text-decoration:none">Sofa &<br />Sectional</a></div>
+      <article class="svc-card">
+        <a href="/sofa-cleaning-buffalo-ny" class="svc-card-link" aria-labelledby="svc-name-sofa"><span class="visually-hidden">View Sofa &amp; Sectional Cleaning details</span></a>
+        <div class="svc-card-name" id="svc-name-sofa">Sofa &<br />Sectional</div>
         <div class="svc-card-price">Starts at $89</div>
         <div class="svc-card-desc">Final price depends on size and condition.</div>
         <img src="/images/sofa.png" alt="Sofa and sectional upholstery cleaning icon" class="svc-card-img" width="120" height="120" loading="lazy" />
-        <a href="/#contact" class="btn-quote">Get Quote</a>
-      </div>
-      <div class="svc-card">
-        <div class="svc-card-name">Chair &<br />Armchair</div>
+        <a href="/sofa-cleaning-buffalo-ny" class="btn-quote">Get Quote</a>
+      </article>
+      <article class="svc-card">
+        <a href="/#contact" class="svc-card-link" aria-labelledby="svc-name-chair"><span class="visually-hidden">Request a free estimate for Chair &amp; Armchair Cleaning</span></a>
+        <div class="svc-card-name" id="svc-name-chair">Chair &<br />Armchair</div>
         <div class="svc-card-price">Starts at $49</div>
         <div class="svc-card-desc">Final price depends on size and condition.</div>
         <img src="/images/chair.png" alt="Chair and armchair upholstery cleaning icon" class="svc-card-img" width="120" height="120" loading="lazy" />
         <a href="/#contact" class="btn-quote">Get Quote</a>
-      </div>
-      <div class="svc-card">
-        <div class="svc-card-name">Mattress<br />Cleaning</div>
+      </article>
+      <article class="svc-card">
+        <a href="/#contact" class="svc-card-link" aria-labelledby="svc-name-mattress"><span class="visually-hidden">Request a free estimate for Mattress Cleaning</span></a>
+        <div class="svc-card-name" id="svc-name-mattress">Mattress<br />Cleaning</div>
         <div class="svc-card-price">Starts at $69</div>
         <div class="svc-card-desc">Final price depends on size and condition.</div>
         <img src="/images/mattress.png" alt="Mattress upholstery cleaning icon" class="svc-card-img" width="120" height="120" loading="lazy" />
         <a href="/#contact" class="btn-quote">Get Quote</a>
-      </div>
-      <div class="svc-card">
-        <div class="svc-card-name">Car Interior<br />Cleaning</div>
+      </article>
+      <article class="svc-card">
+        <a href="/#contact" class="svc-card-link" aria-labelledby="svc-name-car"><span class="visually-hidden">Request a free estimate for Car Interior Cleaning</span></a>
+        <div class="svc-card-name" id="svc-name-car">Car Interior<br />Cleaning</div>
         <div class="svc-card-price">Starts at $79</div>
         <div class="svc-card-desc">Final price depends on size and condition.</div>
         <img src="/images/car.png" alt="Car interior upholstery cleaning icon" class="svc-card-img" width="120" height="120" loading="lazy" />
         <a href="/#contact" class="btn-quote">Get Quote</a>
-      </div>
+      </article>
     </div>
   </section>
 
@@ -132,7 +136,7 @@ const formAction = `https://formspree.io/f/${formspreeId ?? ''}`;
       <div class="trust-card"><div class="trust-card-title">Free Estimates</div><div class="trust-card-desc">No cost and no obligation to find out your price.</div></div>
     </div>
     <div class="guarantee-box">
-      <h3>Honest Service Guarantee</h3>
+      <h3><svg class="guarantee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>Honest Service Guarantee</h3>
       <p>Every fabric and stain is different, so I never promise impossible results.</p>
       <p>Before starting, I explain what can realistically be expected.</p>
       <p>If you are not satisfied with the cleaning, I will review the issue with you and do my best to make it right.</p>
@@ -204,6 +208,7 @@ const formAction = `https://formspree.io/f/${formspreeId ?? ''}`;
       <span class="area-chip">Orchard Park</span>
       <span class="area-chip">Depew</span>
     </div>
+    <p class="area-note">Don't see your city? Call or text me. If you're within about 30–40 minutes of Buffalo, I'll usually come to you.</p>
   </section>
 
   <section id="contact" class="bg-tint">
@@ -217,6 +222,10 @@ const formAction = `https://formspree.io/f/${formspreeId ?? ''}`;
         <a href="mailto:freshnestbuffalo@gmail.com" class="contact-email">freshnestbuffalo@gmail.com</a>
       </div>
       <div class="c-form">
+        <div class="c-form-trust">
+          <p class="c-form-trust-title">Usually replies within 30 minutes</p>
+          <p class="c-form-trust-sub">No spam. No pressure. Just a real estimate.</p>
+        </div>
         <h3>Send a message</h3>
         <form id="form" method="POST" action={formAction} enctype="multipart/form-data">
           <input type="hidden" name="_subject" value="New estimate request — Fresh Nest" />
