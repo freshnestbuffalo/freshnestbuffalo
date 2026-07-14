@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://freshnestbuffalo.com/sitemap.xml
+Sitemap: https://freshnestbuffalo.com/sitemap-index.xml

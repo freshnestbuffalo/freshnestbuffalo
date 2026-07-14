@@ -4,6 +4,7 @@ interface Props {
   description: string;
   canonical: string;
   ogImage?: string;
+  robots?: string;
 }
 
 const {
@@ -11,12 +12,13 @@ const {
   description,
   canonical,
   ogImage = 'https://freshnestbuffalo.com/images/owner.png',
+  robots = 'index,follow,max-image-preview:large',
 } = Astro.props;
 ---
 
 <title>{title}</title>
 <meta name="description" content={description} />
-<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="robots" content={robots} />
 <link rel="canonical" href={canonical} />
 
 <meta property="og:type" content="website" />
