@@ -5,17 +5,32 @@ import Cta from '../components/Cta.astro';
 
 <Layout
   title="Thank You | Fresh Nest Upholstery Cleaning"
-  description="Your request has been received. Fresh Nest Upholstery Cleaning will contact you shortly."
+  description="Your request has been received. Fresh Nest Upholstery Cleaning will review it and reply as soon as possible."
   canonical="https://freshnestbuffalo.com/thank-you"
   robots="noindex, follow"
 >
-  <section id="final-cta" class="bg-tint">
-    <h1 class="sec-title">Thank you!</h1>
-    <p class="sec-sub">Your request has been received.<br />I usually reply within 30 minutes.</p>
+  <section id="confirmation" class="bg-tint">
+    <h1 class="sec-title">Thank You — We Received Your Request</h1>
+    <p class="sec-sub">We'll review your information and reply as soon as possible.</p>
+  </section>
+
+  <section id="photos" class="bg-white">
+    <h2 class="sec-title">Send Photos for a More Accurate Quote</h2>
+    <p class="sec-sub">Text or email a few clear photos of the item, including any stains or problem areas. Please include the name you used in the form.</p>
     <Cta
       wrapperClass="cta-btns"
       buttons={[
-        { label: 'Call (716) 204-6437', href: 'tel:+17162046437', variant: 'primary' },
+        { label: 'Text Photos to (716) 204-6437', href: 'sms:+17162046437?body=Hi%20Fresh%20Nest%2C%20I%20just%20submitted%20a%20quote%20request.%20Here%20are%20my%20photos.', variant: 'primary' },
+        { label: 'Email Photos', href: 'mailto:freshnestbuffalo@gmail.com?subject=Fresh%20Nest%20Photo%20Quote', variant: 'secondary' },
+      ]}
+    />
+    <p class="area-note">Phone: <a href="tel:+17162046437">(716) 204-6437</a> · Email: <a href="mailto:freshnestbuffalo@gmail.com">freshnestbuffalo@gmail.com</a></p>
+  </section>
+
+  <section id="final-cta" class="bg-tint">
+    <Cta
+      wrapperClass="cta-btns"
+      buttons={[
         { label: 'Back to Home', href: '/', variant: 'secondary' },
       ]}
     />

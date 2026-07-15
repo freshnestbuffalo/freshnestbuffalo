@@ -1,4 +1,19 @@
-<nav>
+---
+const servicePages = [
+  '/sofa-cleaning-buffalo-ny',
+  '/mattress-cleaning-buffalo-ny',
+  '/chair-cleaning-buffalo-ny',
+  '/car-interior-cleaning-buffalo-ny',
+];
+// build.format: 'file' means Astro.url.pathname is the output file path
+// (e.g. "/sofa-cleaning-buffalo-ny.html") at build time, not the clean
+// Cloudflare-redirected URL -- strip the .html suffix before comparing.
+const currentPath = Astro.url.pathname.replace(/\.html$/, '');
+const isServicePage = servicePages.includes(currentPath);
+const quoteHref = isServicePage ? '#quote' : '/#contact';
+---
+
+<nav class="site-nav">
   <a href="/" class="logo">
     <img src="/images/logo.png" alt="Fresh Nest Upholstery Cleaning logo" height="42" />
     <div class="logo-text">
@@ -10,6 +25,6 @@
     <li><a href="/#services">Services</a></li>
     <li><a href="/#gallery">Before &amp; After</a></li>
     <li><a href="/#process">Process</a></li>
-    <li><a href="/#contact" class="btn-book">Book Now</a></li>
+    <li><a href={quoteHref} class="btn-book">Get a Quote</a></li>
   </ul>
 </nav>

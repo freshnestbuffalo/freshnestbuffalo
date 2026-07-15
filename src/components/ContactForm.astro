@@ -1,0 +1,126 @@
+---
+interface Props {
+  defaultService?: string;
+  sourcePage: string;
+  formId?: string;
+}
+
+const { defaultService = '', sourcePage, formId = 'contact' } = Astro.props;
+
+const formspreeId = import.meta.env.PUBLIC_FORMSPREE_ID;
+
+if (!formspreeId) {
+  console.warn(
+    '[ContactForm] PUBLIC_FORMSPREE_ID is not set. Set it in .env for local development, ' +
+    'and in Cloudflare Pages under Settings -> Environment variables for production. ' +
+    'The form will not submit correctly until this is configured.'
+  );
+}
+
+const formAction = `https://formspree.io/f/${formspreeId ?? ''}`;
+
+const serviceOptions = [
+  'Sofa & Sectional Cleaning',
+  'Chair & Armchair Cleaning',
+  'Mattress Cleaning',
+  'Car Interior Cleaning',
+  'Multiple items',
+  'Other',
+];
+
+const nameId = `f-name-${formId}`;
+const phoneId = `f-phone-${formId}`;
+const serviceId = `f-service-${formId}`;
+const zipId = `f-zip-${formId}`;
+const messageId = `f-message-${formId}`;
+const successId = `success-${formId}`;
+const statusId = `form-status-${formId}`;
+const formElId = `form-${formId}`;
+---
+
+<div class="c-form">
+  <div class="c-form-trust">
+    <p class="c-form-trust-title">We reply as soon as possible</p>
+    <p class="c-form-trust-sub">No spam. No pressure. Just a real estimate.</p>
+  </div>
+  <h3>Get Your Free Quote</h3>
+  <form id={formElId} method="POST" action={formAction}>
+    <input type="hidden" name="_subject" value="New Website Lead | Fresh Nest" />
+    <input type="hidden" name="source_page" value={sourcePage} />
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+    <div class="frow">
+      <div class="fg"><label for={nameId}>Name</label><input type="text" id={nameId} name="name" placeholder="John Smith" required /></div>
+      <div class="fg"><label for={phoneId}>Phone</label><input type="tel" id={phoneId} name="phone" placeholder="(716) 000-0000" required /></div>
+    </div>
+    <div class="fg"><label for={serviceId}>Service needed</label>
+      <select id={serviceId} name="service" required>
+        <option value="" selected={!defaultService}>Select a service</option>
+        {serviceOptions.map((option) => (
+          <option value={option} selected={defaultService === option}>{option}</option>
+        ))}
+      </select>
+    </div>
+    <div class="fg"><label for={zipId}>ZIP code</label><input type="text" id={zipId} name="zip" placeholder="14201" maxlength="5" /></div>
+    <p class="form-note">Send your details first. After submitting, you can text or email photos for a more accurate quote.</p>
+    <div class="fg"><label for={messageId}>Message (optional)</label><textarea id={messageId} name="message" placeholder="Describe your furniture, any stains or specific concerns..."></textarea></div>
+    <button type="submit" class="btn-submit">Get My Free Quote</button>
+    <p class="form-note">We reply as soon as possible · No spam ever</p>
+    <p id={statusId} class="form-note" aria-live="polite"></p>
+  </form>
+  <div class="success" id={successId}>
+    <div style="font-size:48px;margin-bottom:1rem" aria-hidden="true">✅</div>
+    <h3>Message sent!</h3>
+    <p style="color:#888;font-size:15px;margin-top:.5rem">We'll get back to you as soon as possible.</p>
+  </div>
+</div>
+
+<script define:vars={{ formElId, statusId, formAction }}>
+  const formEl = document.getElementById(formElId);
+  const statusEl = document.getElementById(statusId);
+  let isSubmitting = false;
+
+  if (formEl) {
+    formEl.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (isSubmitting) return;
+
+      const submitBtn = formEl.querySelector('.btn-submit');
+      const originalText = submitBtn ? submitBtn.textContent : '';
+
+      isSubmitting = true;
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+      }
+      if (statusEl) {
+        statusEl.textContent = '';
+        statusEl.style.color = '';
+      }
+
+      try {
+        const formData = new FormData(formEl);
+        const response = await fetch(formAction, {
+          method: 'POST',
+          body: formData,
+          headers: { Accept: 'application/json' },
+        });
+
+        if (response.ok) {
+          window.location.href = '/thank-you';
+          return;
+        }
+        throw new Error('Formspree submission failed');
+      } catch (err) {
+        if (statusEl) {
+          statusEl.textContent = 'Something went wrong. Please try again, or call or text (716) 204-6437.';
+          statusEl.style.color = '#B3261E';
+        }
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        }
+        isSubmitting = false;
+      }
+    });
+  }
+</script>

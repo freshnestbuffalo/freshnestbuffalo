@@ -1,0 +1,203 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Cta from '../components/Cta.astro';
+import Faq from '../components/Faq.astro';
+import ContactForm from '../components/ContactForm.astro';
+import OtherServices from '../components/OtherServices.astro';
+
+const faqItems = [
+  {
+    q: 'How much does mattress cleaning cost in Buffalo, NY?',
+    a: 'Mattress cleaning starts at $69. The final price depends on mattress size, material, condition, stains and odor concerns, confirmed after a photo estimate.',
+  },
+  {
+    q: 'Do you clean all mattress sizes?',
+    a: 'Yes — Twin, Full, Queen, King and other sizes are all cleaned. Pricing depends on size and condition and is confirmed after a photo estimate.',
+  },
+  {
+    q: 'Will the mattress be wet after cleaning?',
+    a: 'Some moisture is normal right after cleaning. Additional moisture extraction is used to remove as much as possible before we leave.',
+  },
+  {
+    q: 'When can I sleep on the mattress?',
+    a: 'The mattress must be fully dry before use. Drying time depends on airflow, humidity, mattress construction and the amount of cleaning required — we explain what to expect for your mattress.',
+  },
+  {
+    q: 'Can urine stains or odors be removed?',
+    a: 'Many stains and light odors improve significantly with cleaning. Deep-set urine or odor concerns require assessment first, and complete removal is not guaranteed.',
+  },
+  {
+    q: 'Do I need to prepare anything?',
+    a: 'Just have the mattress accessible (sheets and bedding removed). All cleaning equipment and solutions are brought on-site.',
+  },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Mattress Cleaning',
+  serviceType: 'Upholstery Cleaning',
+  url: 'https://freshnestbuffalo.com/mattress-cleaning-buffalo-ny',
+  provider: {
+    '@id': 'https://freshnestbuffalo.com/#business',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Buffalo' },
+    { '@type': 'City', name: 'Amherst' },
+    { '@type': 'City', name: 'Williamsville' },
+    { '@type': 'City', name: 'Clarence' },
+    { '@type': 'City', name: 'East Amherst' },
+    { '@type': 'City', name: 'Cheektowaga' },
+    { '@type': 'City', name: 'Lancaster' },
+    { '@type': 'City', name: 'Tonawanda' },
+    { '@type': 'City', name: 'West Seneca' },
+    { '@type': 'City', name: 'Orchard Park' },
+    { '@type': 'City', name: 'Depew' },
+  ],
+  offers: {
+    '@type': 'Offer',
+    priceSpecification: { '@type': 'PriceSpecification', minPrice: '69', priceCurrency: 'USD' },
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://freshnestbuffalo.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Mattress Cleaning Buffalo NY', item: 'https://freshnestbuffalo.com/mattress-cleaning-buffalo-ny' },
+  ],
+};
+---
+
+<Layout
+  title="Mattress Cleaning Buffalo, NY | Fresh Nest"
+  description="Professional mattress cleaning in Buffalo for visible stains, spills, everyday buildup and odor concerns. Starting at $69. Send photos for a free quote."
+  canonical="https://freshnestbuffalo.com/mattress-cleaning-buffalo-ny"
+  extraSchemas={[serviceSchema, breadcrumbSchema]}
+>
+  <div class="hero" id="home">
+    <div class="hero-left">
+      <div class="badge">Owner-operated · Buffalo, NY</div>
+      <h1>Professional<br /><em>Mattress Cleaning</em><br />in Buffalo, NY</h1>
+      <p class="hero-sub">Visible stains, spills, everyday body-oil buildup, child or pet accidents, or odor concerns? Send photos and get a clear quote before your appointment.</p>
+      <Cta
+        buttons={[
+          { label: 'Get a Free Photo Quote', href: '#quote', variant: 'primary' },
+          { label: 'Call (716) 204-6437', href: 'tel:+17162046437', variant: 'secondary' },
+        ]}
+      />
+      <div class="hero-stats">
+        <div><div class="stat-num">$69</div><div class="stat-label">Starting price</div></div>
+        <div><div class="stat-num">Photos</div><div class="stat-label">For an accurate quote</div></div>
+        <div><div class="stat-num">Free</div><div class="stat-label">Estimates</div></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="/images/owner.png" alt="Owner of Fresh Nest Upholstery Cleaning serving Buffalo, NY" />
+    </div>
+  </div>
+
+  <section id="pricing" class="bg-white">
+    <p class="eyebrow">Starting at $69</p>
+    <h2 class="sec-title">Honest, Upfront Starting Price</h2>
+    <p class="sec-sub">Final pricing depends on mattress size, material, condition, stains, odor concerns and the number of sides being cleaned. Send photos for an exact quote before your appointment.</p>
+  </section>
+
+  <section id="why" class="bg-tint">
+    <p class="eyebrow">Why it matters</p>
+    <h2 class="sec-title">Why Clean Your Mattress Professionally</h2>
+    <p class="sec-sub">Mattresses absorb daily wear that's easy to overlook until it's visible.</p>
+    <div class="trust-grid">
+      <div class="trust-card"><div class="trust-card-title">Body Oils</div><div class="trust-card-desc">Nightly use leaves body oils that build up in the fabric over time.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Dust</div><div class="trust-card-desc">Dust collects in the surface fibers of a mattress over months of use.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Spills & Accidents</div><div class="trust-card-desc">Spills and accidents can leave visible marks if left untreated.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Odor Buildup</div><div class="trust-card-desc">Everyday odors can accumulate in mattress fabric over time.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Discoloration</div><div class="trust-card-desc">Visible discoloration can develop gradually with regular use.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Everyday Buildup</div><div class="trust-card-desc">Regular use gradually builds up soil that vacuuming alone can't remove.</div></div>
+    </div>
+  </section>
+
+  <section id="problems" class="bg-white">
+    <p class="eyebrow">What we treat</p>
+    <h2 class="sec-title">Common Mattress Problems We Treat</h2>
+    <p class="sec-sub">Every mattress and stain responds differently to treatment.</p>
+    <div class="trust-grid">
+      <div class="trust-card"><div class="trust-card-title">Visible Stains</div><div class="trust-card-desc">Spot-treated based on material and how long the stain has set.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Spills</div><div class="trust-card-desc">Treated with appropriate pre-treatment and spot cleaning.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Everyday Body-Oil Buildup</div><div class="trust-card-desc">Lifted with pre-treatment and controlled extraction cleaning.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Child or Pet Accidents</div><div class="trust-card-desc">Assessed first — results depend on how long the accident has set and the material.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Odor Concerns</div><div class="trust-card-desc">Light odor concerns can often improve with cleaning; stronger concerns are assessed first.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Uncertainty About Drying</div><div class="trust-card-desc">We explain realistic drying expectations before the work begins.</div></div>
+    </div>
+  </section>
+
+  <section id="included" class="bg-tint">
+    <p class="eyebrow">Our process</p>
+    <h2 class="sec-title">What's Included</h2>
+    <p class="sec-sub">The exact cleaning method is adjusted to the material and condition. A typical mattress cleaning may include:</p>
+    <div class="proc-grid">
+      <div class="proc"><div class="proc-num">1</div><div class="proc-title">Mattress & Label Inspection</div><div class="proc-desc">Checking the care label, material and condition before starting.</div></div>
+      <div class="proc"><div class="proc-num">2</div><div class="proc-title">Material Assessment</div><div class="proc-desc">Assessing material and condition to plan the right approach.</div></div>
+      <div class="proc"><div class="proc-num">3</div><div class="proc-title">Dry Soil Removal</div><div class="proc-desc">Removal of accessible dry soil and hair.</div></div>
+      <div class="proc"><div class="proc-num">4</div><div class="proc-title">Spot Testing & Pre-Treatment</div><div class="proc-desc">Appropriate spot testing and pre-treatment of stains.</div></div>
+      <div class="proc"><div class="proc-num">5</div><div class="proc-title">Extraction Cleaning</div><div class="proc-desc">Controlled extraction cleaning when appropriate for the material.</div></div>
+      <div class="proc"><div class="proc-num">6</div><div class="proc-title">Moisture Extraction</div><div class="proc-desc">Additional moisture extraction to speed up drying.</div></div>
+      <div class="proc"><div class="proc-num">7</div><div class="proc-title">Final Inspection</div><div class="proc-desc">Checking results and addressing any remaining concerns.</div></div>
+      <div class="proc"><div class="proc-num">8</div><div class="proc-title">Drying Guidance</div><div class="proc-desc">Advice on airflow and drying time before the mattress is used again.</div></div>
+    </div>
+  </section>
+
+  <section id="expectations" class="bg-white">
+    <p class="eyebrow">Honesty first</p>
+    <h2 class="sec-title">Honest Expectations</h2>
+    <div class="guarantee-box">
+      <h3><svg class="guarantee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>Realistic Results, Explained Upfront</h3>
+      <p>We inspect the material first and explain realistic expectations before cleaning begins.</p>
+      <p>Old discoloration may not fully disappear, and deep urine or odor concerns require assessment — complete stain or odor removal is not guaranteed.</p>
+      <p>The mattress must be fully dry before use.</p>
+    </div>
+  </section>
+
+  <section id="drying" class="bg-tint">
+    <p class="eyebrow">Drying time</p>
+    <h2 class="sec-title">How Long It Takes To Dry</h2>
+    <p class="sec-sub">Mattresses must be fully dry before use. Drying time depends on airflow, humidity, mattress construction and the amount of cleaning required. We explain realistic drying expectations before the work begins.</p>
+  </section>
+
+  <section id="areas" class="bg-white">
+    <p class="eyebrow">Where we work</p>
+    <h2 class="sec-title">Service Area</h2>
+    <p class="sec-sub">Mattress cleaning is available throughout Buffalo, NY and the surrounding Western New York suburbs.</p>
+    <div class="area-chips">
+      <span class="area-chip">Buffalo</span>
+      <span class="area-chip">Amherst</span>
+      <span class="area-chip">Williamsville</span>
+      <span class="area-chip">Clarence</span>
+      <span class="area-chip">East Amherst</span>
+      <span class="area-chip">Cheektowaga</span>
+      <span class="area-chip">Lancaster</span>
+      <span class="area-chip">Tonawanda</span>
+      <span class="area-chip">West Seneca</span>
+      <span class="area-chip">Orchard Park</span>
+      <span class="area-chip">Depew</span>
+    </div>
+    <p class="area-note">Don't see your city? Call or text me. If you're within about 30–40 minutes of Buffalo, I'll usually come to you.</p>
+  </section>
+
+  <section id="faq" class="bg-tint">
+    <p class="eyebrow">Questions</p>
+    <h2 class="sec-title">Frequently Asked Questions</h2>
+    <p class="sec-sub">Straight answers before you book.</p>
+    <Faq items={faqItems} />
+  </section>
+
+  <section id="quote" class="bg-white">
+    <p class="eyebrow">Ready to start?</p>
+    <h2 class="sec-title">Send Photos for a Free Quote</h2>
+    <p class="sec-sub">Send photos of your mattress and we'll reply as soon as possible with a price.</p>
+    <ContactForm defaultService="Mattress Cleaning" sourcePage="/mattress-cleaning-buffalo-ny" formId="mattress" />
+  </section>
+
+  <OtherServices currentSlug="mattress-cleaning-buffalo-ny" />
+</Layout>

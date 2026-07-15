@@ -1,4 +1,19 @@
+---
+const servicePages = [
+  '/sofa-cleaning-buffalo-ny',
+  '/mattress-cleaning-buffalo-ny',
+  '/chair-cleaning-buffalo-ny',
+  '/car-interior-cleaning-buffalo-ny',
+];
+// build.format: 'file' means Astro.url.pathname is the output file path
+// (e.g. "/sofa-cleaning-buffalo-ny.html") at build time, not the clean
+// Cloudflare-redirected URL -- strip the .html suffix before comparing.
+const currentPath = Astro.url.pathname.replace(/\.html$/, '');
+const isServicePage = servicePages.includes(currentPath);
+const quoteHref = isServicePage ? '#quote' : '/#contact';
+---
+
 <div class="sticky-cta">
   <a href="tel:+17162046437" class="call">Call Now</a>
-  <a href="/#contact" class="estimate">Get Estimate</a>
+  <a href={quoteHref} class="estimate">Get Estimate</a>
 </div>

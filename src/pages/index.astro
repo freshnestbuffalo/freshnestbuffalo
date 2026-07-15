@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Cta from '../components/Cta.astro';
 import Faq from '../components/Faq.astro';
+import ContactForm from '../components/ContactForm.astro';
 
 const faqItems = [
   {
@@ -10,19 +11,19 @@ const faqItems = [
   },
   {
     q: 'How long does upholstery take to dry after cleaning?',
-    a: 'Most furniture dries within 2–4 hours using professional hot water extraction equipment.',
+    a: 'Drying time depends on the item, fabric, airflow, humidity and cleaning needs. We explain what to realistically expect for your specific piece before starting.',
   },
   {
     q: 'Do you offer same-day service?',
-    a: "Same-day appointments are available in most cases, depending on the day's schedule.",
+    a: 'Ask about current availability. Same-day appointments are sometimes possible depending on the schedule.',
   },
   {
     q: 'Is the cleaning process safe for kids and pets?',
-    a: 'Yes. All cleaning solutions used are eco-safe and chosen to be safe around children and pets.',
+    a: 'We use a careful cleaning process for homes with children and pets. Keep children and pets off cleaned surfaces until fully dry.',
   },
   {
     q: 'Do I need to prepare anything before you arrive?',
-    a: 'No preparation is needed. I bring all equipment and cleaning solutions and handle everything on-site.',
+    a: 'Remove loose items, pillows and blankets, and clear access around the item. You do not need to move heavy furniture — we bring the cleaning equipment and solutions.',
   },
   {
     q: 'What areas do you serve near Buffalo, NY?',
@@ -30,7 +31,7 @@ const faqItems = [
   },
   {
     q: 'How do I get a quote?',
-    a: "Fill out the contact form with a few photos of your furniture. You'll get a price and available time slots within 30 minutes.",
+    a: "Fill out the contact form with a few photos of your furniture. We'll reply as soon as possible with a price and available time slots.",
   },
   {
     q: 'What equipment do you use?',
@@ -42,33 +43,30 @@ const faqItems = [
   },
   {
     q: 'Do you clean car interiors as well?',
-    a: 'Yes, car interior upholstery cleaning is available starting at $79.',
+    a: 'Yes, car interior upholstery cleaning is available starting at $79. Final pricing depends on vehicle size, seat material and condition.',
   },
 ];
-
-const formspreeId = import.meta.env.PUBLIC_FORMSPREE_ID ?? 'xwvddlnz';
-const formAction = `https://formspree.io/f/${formspreeId}`;
 ---
 
 <Layout
-  title="Upholstery Cleaning Buffalo NY | Fresh Nest Upholstery Cleaning"
-  description="Owner-operated upholstery cleaning in Buffalo, NY. Sofas, sectionals, mattresses & car seats cleaned eco-safe — safe for kids & pets. Free estimates today."
+  title="Upholstery Cleaning Buffalo, NY | Fresh Nest"
+  description="Stains, spills, pet hair or everyday buildup? Fresh Nest cleans sofas, chairs, mattresses and vehicle upholstery in Buffalo. Send photos for a free quote."
   canonical="https://freshnestbuffalo.com/"
 >
   <div class="hero" id="home">
     <div class="hero-left">
       <div class="badge">Owner-operated · Buffalo, NY</div>
-      <h1>Buffalo, NY<br /><em>Upholstery Cleaning</em><br />You Can Trust</h1>
-      <p class="hero-sub">Professional sofa, chair, mattress and car seat cleaning. I come to you with all equipment — same-day available.</p>
+      <h1>Professional<br /><em>Upholstery Cleaning</em><br />in Buffalo, NY</h1>
+      <p class="hero-sub">Stains, spills, pet hair or everyday buildup? Send photos and get a clear quote before your appointment.</p>
       <Cta
         buttons={[
-          { label: 'Get free estimate', href: '/#contact', variant: 'primary' },
+          { label: 'Get a Free Photo Quote', href: '/#contact', variant: 'primary' },
           { label: 'Call (716) 204-6437', href: 'tel:+17162046437', variant: 'secondary' },
         ]}
       />
       <div class="hero-stats">
-        <div><div class="stat-num">100%</div><div class="stat-label">Eco-safe products</div></div>
-        <div><div class="stat-num">Same day</div><div class="stat-label">Available 7 days</div></div>
+        <div><div class="stat-num">Photos</div><div class="stat-label">For an accurate quote</div></div>
+        <div><div class="stat-num">Ask</div><div class="stat-label">About current availability</div></div>
         <div><div class="stat-num">Free</div><div class="stat-label">Estimates</div></div>
       </div>
     </div>
@@ -91,28 +89,28 @@ const formAction = `https://formspree.io/f/${formspreeId}`;
         <a href="/sofa-cleaning-buffalo-ny" class="btn-quote">View Service <span class="quote-arrow">→</span></a>
       </article>
       <article class="svc-card">
-        <a href="/#contact" class="svc-card-link" aria-labelledby="svc-name-chair"><span class="visually-hidden">Request a free estimate for Chair &amp; Armchair Cleaning</span></a>
+        <a href="/chair-cleaning-buffalo-ny" class="svc-card-link" aria-labelledby="svc-name-chair"><span class="visually-hidden">View Chair &amp; Armchair Cleaning details</span></a>
         <div class="svc-card-name" id="svc-name-chair">Chair &<br />Armchair</div>
         <div class="svc-card-price">Starts at $49</div>
         <div class="svc-card-desc">Final price depends on size and condition.</div>
         <img src="/images/chair.png" alt="Chair and armchair upholstery cleaning icon" class="svc-card-img" width="120" height="120" loading="lazy" />
-        <a href="/#contact" class="btn-quote">Get Quote</a>
+        <a href="/chair-cleaning-buffalo-ny" class="btn-quote">View Service <span class="quote-arrow">→</span></a>
       </article>
       <article class="svc-card">
-        <a href="/#contact" class="svc-card-link" aria-labelledby="svc-name-mattress"><span class="visually-hidden">Request a free estimate for Mattress Cleaning</span></a>
+        <a href="/mattress-cleaning-buffalo-ny" class="svc-card-link" aria-labelledby="svc-name-mattress"><span class="visually-hidden">View Mattress Cleaning details</span></a>
         <div class="svc-card-name" id="svc-name-mattress">Mattress<br />Cleaning</div>
         <div class="svc-card-price">Starts at $69</div>
         <div class="svc-card-desc">Final price depends on size and condition.</div>
         <img src="/images/mattress.png" alt="Mattress upholstery cleaning icon" class="svc-card-img" width="120" height="120" loading="lazy" />
-        <a href="/#contact" class="btn-quote">Get Quote</a>
+        <a href="/mattress-cleaning-buffalo-ny" class="btn-quote">View Service <span class="quote-arrow">→</span></a>
       </article>
       <article class="svc-card">
-        <a href="/#contact" class="svc-card-link" aria-labelledby="svc-name-car"><span class="visually-hidden">Request a free estimate for Car Interior Cleaning</span></a>
+        <a href="/car-interior-cleaning-buffalo-ny" class="svc-card-link" aria-labelledby="svc-name-car"><span class="visually-hidden">View Car Interior Cleaning details</span></a>
         <div class="svc-card-name" id="svc-name-car">Car Interior<br />Cleaning</div>
         <div class="svc-card-price">Starts at $79</div>
         <div class="svc-card-desc">Final price depends on size and condition.</div>
         <img src="/images/car.png" alt="Car interior upholstery cleaning icon" class="svc-card-img" width="120" height="120" loading="lazy" />
-        <a href="/#contact" class="btn-quote">Get Quote</a>
+        <a href="/car-interior-cleaning-buffalo-ny" class="btn-quote">View Service <span class="quote-arrow">→</span></a>
       </article>
     </div>
   </section>
@@ -124,16 +122,16 @@ const formAction = `https://formspree.io/f/${formspreeId}`;
     <div class="trust-grid">
       <div class="trust-card"><div class="trust-card-title">Owner-Operated</div><div class="trust-card-desc">Every job is done personally by the owner — not a rotating crew.</div></div>
       <div class="trust-card"><div class="trust-card-title">Professional Equipment</div><div class="trust-card-desc">Mytee hot water extraction equipment, the professional-grade standard.</div></div>
-      <div class="trust-card"><div class="trust-card-title">Eco-Safe Products</div><div class="trust-card-desc">Cleaning solutions chosen to be safe around kids and pets.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Products For The Job</div><div class="trust-card-desc">Products selected for the material and cleaning need — not a one-size-fits-all solution.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Careful Around Kids &amp; Pets</div><div class="trust-card-desc">A careful cleaning process for homes with children and pets. Keep them off cleaned surfaces until fully dry.</div></div>
       <div class="trust-card"><div class="trust-card-title">Transparent Pricing</div><div class="trust-card-desc">Price confirmed upfront from photos — no surprises on arrival.</div></div>
-      <div class="trust-card"><div class="trust-card-title">Fast Response</div><div class="trust-card-desc">Quotes within 30 minutes, same-day appointments in most cases.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Quick Response</div><div class="trust-card-desc">We reply as soon as possible. Ask about current availability.</div></div>
       <div class="trust-card"><div class="trust-card-title">Free Estimates</div><div class="trust-card-desc">No cost and no obligation to find out your price.</div></div>
     </div>
     <div class="guarantee-box">
-      <h3><svg class="guarantee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>Honest Service Guarantee</h3>
-      <p>Every fabric and stain is different, so I never promise impossible results.</p>
-      <p>Before starting, I explain what can realistically be expected.</p>
-      <p>If you are not satisfied with the cleaning, I will review the issue with you and do my best to make it right.</p>
+      <h3><svg class="guarantee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>Honest Expectations</h3>
+      <p>We inspect the material first and explain realistic expectations before cleaning.</p>
+      <p>If a stain or odor is unlikely to fully come out, we will tell you before the work begins.</p>
     </div>
   </section>
 
@@ -171,9 +169,9 @@ const formAction = `https://formspree.io/f/${formspreeId}`;
     <h2 class="sec-title">4 Simple Steps</h2>
     <div class="proc-grid">
       <div class="proc"><div class="proc-num">1</div><div class="proc-title">Send a few photos</div><div class="proc-desc">Fill the form and attach photos of your furniture for an accurate estimate.</div></div>
-      <div class="proc"><div class="proc-num">2</div><div class="proc-title">Get your quote</div><div class="proc-desc">I'll get back to you within 30 minutes with a price and available time slots.</div></div>
-      <div class="proc"><div class="proc-num">3</div><div class="proc-title">I come to you</div><div class="proc-desc">I arrive with all equipment and eco-safe cleaning solutions. No prep needed.</div></div>
-      <div class="proc"><div class="proc-num">4</div><div class="proc-title">Enjoy clean furniture</div><div class="proc-desc">Dries in 2–4 hours. You'll see the difference immediately.</div></div>
+      <div class="proc"><div class="proc-num">2</div><div class="proc-title">Get your quote</div><div class="proc-desc">We reply as soon as possible with a price and available time slots.</div></div>
+      <div class="proc"><div class="proc-num">3</div><div class="proc-title">I come to you</div><div class="proc-desc">I arrive with all equipment and cleaning solutions. Please remove loose items and clear access around the piece.</div></div>
+      <div class="proc"><div class="proc-num">4</div><div class="proc-title">Enjoy clean furniture</div><div class="proc-desc">Drying time depends on the item and conditions. You'll see the difference immediately.</div></div>
     </div>
   </section>
 
@@ -209,63 +207,13 @@ const formAction = `https://formspree.io/f/${formspreeId}`;
     <p class="eyebrow">Get in touch</p>
     <div class="contact-wrap">
       <div class="contact-info">
-        <h2>Request a Free Estimate</h2>
-        <p>Send a few details and I'll get back to you within 30 minutes with a price. Serving Buffalo and all surrounding areas 7 days a week.</p>
+        <h2>Get a Free Photo Quote</h2>
+        <p>Send a few details and photos, and we'll reply as soon as possible with a price. Serving Buffalo and all surrounding areas.</p>
         <a href="tel:+17162046437" class="contact-tel">(716) 204-6437</a>
-        <p class="contact-note">Call or text anytime</p>
+        <p class="contact-note">Call or text — we reply as soon as possible</p>
         <a href="mailto:freshnestbuffalo@gmail.com" class="contact-email">freshnestbuffalo@gmail.com</a>
       </div>
-      <div class="c-form">
-        <div class="c-form-trust">
-          <p class="c-form-trust-title">Usually replies within 30 minutes</p>
-          <p class="c-form-trust-sub">No spam. No pressure. Just a real estimate.</p>
-        </div>
-        <h3>Send a message</h3>
-        <form id="form" method="POST" action={formAction} enctype="multipart/form-data">
-          <input type="hidden" name="_subject" value="New Website Lead | Fresh Nest" />
-          <input type="hidden" name="_next" value="https://freshnestbuffalo.com/thank-you" />
-          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
-          <div class="frow">
-            <div class="fg"><label for="f-name">Name</label><input type="text" id="f-name" name="name" placeholder="John Smith" required /></div>
-            <div class="fg"><label for="f-phone">Phone</label><input type="tel" id="f-phone" name="phone" placeholder="(716) 000-0000" required /></div>
-          </div>
-          <div class="fg"><label for="f-service">Service needed</label>
-            <select id="f-service" name="service" required>
-              <option value="">Select a service</option>
-              <option>Sofa / Sectional Cleaning</option>
-              <option>Chair / Armchair Cleaning</option>
-              <option>Mattress Cleaning</option>
-              <option>Car Interior Cleaning</option>
-              <option>Multiple items</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="fg"><label for="f-zip">ZIP code</label><input type="text" id="f-zip" name="zip" placeholder="14201" maxlength="5" /></div>
-          <div class="upload" onclick="document.getElementById('photos').click()">
-            <input type="file" id="photos" name="photos" multiple accept="image/*" onchange="showFiles(this)" />
-            <div class="upload-icon" aria-hidden="true">📎</div>
-            <div class="upload-txt"><strong>Upload photos</strong> for a more accurate estimate</div>
-            <div id="fnames" style="font-size:12px;color:#40916C;margin-top:4px"></div>
-          </div>
-          <div class="fg"><label for="f-message">Message (optional)</label><textarea id="f-message" name="message" placeholder="Describe your furniture, any stains or specific concerns..."></textarea></div>
-          <button type="submit" class="btn-submit">GET MY ESTIMATE →</button>
-          <p class="form-note">We respond within 30 minutes · No spam ever</p>
-        </form>
-        <div class="success" id="success">
-          <div style="font-size:48px;margin-bottom:1rem" aria-hidden="true">✅</div>
-          <h3>Message sent!</h3>
-          <p style="color:#888;font-size:15px;margin-top:.5rem">I'll get back to you within 30 minutes.</p>
-        </div>
-      </div>
+      <ContactForm sourcePage="/" formId="home" />
     </div>
   </section>
 </Layout>
-
-<script>
-  function showFiles(input: HTMLInputElement) {
-    const el = document.getElementById('fnames');
-    if (el) el.textContent = Array.from(input.files ?? []).map((f) => f.name).join(', ');
-  }
-  // @ts-expect-error - exposed for the inline onchange handler
-  window.showFiles = showFiles;
-</script>

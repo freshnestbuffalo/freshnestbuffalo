@@ -7,37 +7,37 @@ import OtherServices from '../components/OtherServices.astro';
 
 const faqItems = [
   {
-    q: 'How much does sofa cleaning cost in Buffalo, NY?',
-    a: 'Sofa and sectional cleaning starts at $89. The final price depends on the size, construction, fabric and condition of the piece and is confirmed after a photo estimate.',
+    q: 'How much does chair cleaning cost in Buffalo, NY?',
+    a: 'Chair and armchair cleaning starts at $49. The final price depends on chair size, construction, fabric, condition and stains, confirmed after a photo estimate.',
   },
   {
-    q: 'How long will my sofa take to dry?',
-    a: 'Most sofas and chairs typically need several hours to dry. Drying time depends on fabric, airflow, humidity, construction and the amount of cleaning required.',
+    q: 'Do you clean recliners and armchairs?',
+    a: 'Yes. Recliners and chairs with complex construction are assessed from photos before pricing.',
   },
   {
-    q: 'Can every stain be removed?',
-    a: 'No. Every fabric and stain is different — some stains can be removed completely, while others may only improve. We explain realistic expectations before starting.',
+    q: 'Can dark armrests and seat stains be improved?',
+    a: 'Often, yes. Results depend on the fabric type and how long the staining or darkening has set — we explain realistic expectations before starting.',
   },
   {
-    q: 'Can you help with pet hair and odor concerns?',
-    a: 'Yes. Pet hair and light household odor concerns can often be improved during cleaning. Strong or deep-set odors require an in-person or photo assessment, and full removal is not guaranteed.',
+    q: 'How long will the chair take to dry?',
+    a: 'Most chairs typically need several hours to dry. Drying time depends on fabric, airflow, humidity, construction and the amount of cleaning required.',
   },
   {
-    q: 'What should I do before the appointment?',
-    a: 'Please remove pillows, blankets and personal items, and clear access around the sofa. You do not need to move heavy furniture.',
+    q: 'Can all chair fabrics be cleaned?',
+    a: 'Most upholstery fabrics can be cleaned, but the right method depends on the material. Send photos so we can assess the fabric and confirm before your appointment.',
   },
   {
-    q: 'Which areas do you serve?',
-    a: 'Buffalo, Amherst, Williamsville, Clarence, East Amherst, Cheektowaga, Lancaster, Tonawanda, West Seneca, Orchard Park, and Depew.',
+    q: 'Do you clean more than one chair per visit?',
+    a: "Yes. Send photos of everything you'd like cleaned and we'll include it in your quote.",
   },
 ];
 
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Sofa & Sectional Cleaning',
+  name: 'Chair & Armchair Cleaning',
   serviceType: 'Upholstery Cleaning',
-  url: 'https://freshnestbuffalo.com/sofa-cleaning-buffalo-ny',
+  url: 'https://freshnestbuffalo.com/chair-cleaning-buffalo-ny',
   provider: {
     '@id': 'https://freshnestbuffalo.com/#business',
   },
@@ -56,7 +56,7 @@ const serviceSchema = {
   ],
   offers: {
     '@type': 'Offer',
-    priceSpecification: { '@type': 'PriceSpecification', minPrice: '89', priceCurrency: 'USD' },
+    priceSpecification: { '@type': 'PriceSpecification', minPrice: '49', priceCurrency: 'USD' },
   },
 };
 
@@ -65,22 +65,22 @@ const breadcrumbSchema = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://freshnestbuffalo.com/' },
-    { '@type': 'ListItem', position: 2, name: 'Sofa Cleaning Buffalo NY', item: 'https://freshnestbuffalo.com/sofa-cleaning-buffalo-ny' },
+    { '@type': 'ListItem', position: 2, name: 'Chair Cleaning Buffalo NY', item: 'https://freshnestbuffalo.com/chair-cleaning-buffalo-ny' },
   ],
 };
 ---
 
 <Layout
-  title="Sofa & Couch Cleaning Buffalo, NY | Fresh Nest"
-  description="Professional sofa, couch and sectional cleaning in Buffalo. Help with stains, pet hair, spills, odors and everyday buildup. Send photos for a free quote."
-  canonical="https://freshnestbuffalo.com/sofa-cleaning-buffalo-ny"
+  title="Chair & Armchair Cleaning Buffalo, NY | Fresh Nest"
+  description="Professional chair, armchair and recliner upholstery cleaning in Buffalo. Help with dark armrests, seat stains, spills and everyday buildup. From $49."
+  canonical="https://freshnestbuffalo.com/chair-cleaning-buffalo-ny"
   extraSchemas={[serviceSchema, breadcrumbSchema]}
 >
   <div class="hero" id="home">
     <div class="hero-left">
       <div class="badge">Owner-operated · Buffalo, NY</div>
-      <h1>Professional<br /><em>Sofa & Couch Cleaning</em><br />in Buffalo, NY</h1>
-      <p class="hero-sub">Dark, worn armrests? Spills, pet hair, visible stains or everyday buildup? Send photos and get a clear quote before your appointment.</p>
+      <h1>Professional<br /><em>Chair & Armchair Cleaning</em><br />in Buffalo, NY</h1>
+      <p class="hero-sub">Darkened armrests, heavily used seat cushions, spills, visible stains, pet hair or fabric concerns? Send photos and get a clear quote before your appointment.</p>
       <Cta
         buttons={[
           { label: 'Get a Free Photo Quote', href: '#quote', variant: 'primary' },
@@ -88,7 +88,7 @@ const breadcrumbSchema = {
         ]}
       />
       <div class="hero-stats">
-        <div><div class="stat-num">$89</div><div class="stat-label">Starting price</div></div>
+        <div><div class="stat-num">$49</div><div class="stat-label">Starting price</div></div>
         <div><div class="stat-num">Photos</div><div class="stat-label">For an accurate quote</div></div>
         <div><div class="stat-num">Free</div><div class="stat-label">Estimates</div></div>
       </div>
@@ -99,53 +99,52 @@ const breadcrumbSchema = {
   </div>
 
   <section id="pricing" class="bg-white">
-    <p class="eyebrow">Starting at $89</p>
+    <p class="eyebrow">Starting at $49</p>
     <h2 class="sec-title">Honest, Upfront Starting Price</h2>
-    <p class="sec-sub">Final pricing depends on furniture size, construction, fabric, condition, stains, odors and the surfaces being cleaned. Send photos for an exact quote before your appointment.</p>
+    <p class="sec-sub">Final pricing depends on chair size, construction, fabric, condition, stains and the surfaces being cleaned. Send photos for an exact quote before your appointment.</p>
   </section>
 
   <section id="why" class="bg-tint">
     <p class="eyebrow">Why it matters</p>
-    <h2 class="sec-title">Why Clean Your Sofa Professionally</h2>
-    <p class="sec-sub">Sofas absorb more daily wear than almost any other piece of furniture in the house.</p>
+    <h2 class="sec-title">Why Clean Your Chair Professionally</h2>
+    <p class="sec-sub">Chairs and armchairs see concentrated daily wear, especially on arms and seat cushions.</p>
     <div class="trust-grid">
-      <div class="trust-card"><div class="trust-card-title">Dirt</div><div class="trust-card-desc">Ground-in dirt settles deep into fabric fibers over time.</div></div>
-      <div class="trust-card"><div class="trust-card-title">Body Oils</div><div class="trust-card-desc">Daily use leaves body oils that dull fabric color and texture.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Dark Armrests</div><div class="trust-card-desc">Repeated contact darkens armrests and headrest areas over time.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Seat Wear</div><div class="trust-card-desc">The most-used cushion typically shows soiling first.</div></div>
       <div class="trust-card"><div class="trust-card-title">Pet Hair</div><div class="trust-card-desc">Pet hair and dander build up in the weave of the fabric.</div></div>
-      <div class="trust-card"><div class="trust-card-title">Odors</div><div class="trust-card-desc">Everyday odors accumulate in upholstery fibers over months of use.</div></div>
-      <div class="trust-card"><div class="trust-card-title">Dust & Hair</div><div class="trust-card-desc">Dust, hair and everyday debris can collect in cushions, seams and fabric surfaces.</div></div>
-      <div class="trust-card"><div class="trust-card-title">Food Spills</div><div class="trust-card-desc">Spills can leave residue and stains if left untreated.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Food & Drink Spills</div><div class="trust-card-desc">Spills can leave residue and stains if left untreated.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Fabric Concerns</div><div class="trust-card-desc">Different fabrics respond differently to cleaning methods.</div></div>
       <div class="trust-card"><div class="trust-card-title">Everyday Buildup</div><div class="trust-card-desc">Regular use gradually builds up soil that vacuuming alone can't remove.</div></div>
     </div>
   </section>
 
   <section id="problems" class="bg-white">
     <p class="eyebrow">What we treat</p>
-    <h2 class="sec-title">Common Sofa Problems We Treat</h2>
+    <h2 class="sec-title">Common Chair Problems We Treat</h2>
     <p class="sec-sub">Every fabric and stain responds differently to treatment.</p>
     <div class="trust-grid">
-      <div class="trust-card"><div class="trust-card-title">Dark Armrests</div><div class="trust-card-desc">Dark, worn areas around armrests and head-contact zones from daily use.</div></div>
-      <div class="trust-card"><div class="trust-card-title">Food & Drink Spills</div><div class="trust-card-desc">Spot-treated based on fabric type and how long the spill has set.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Darkened Armrests</div><div class="trust-card-desc">Treated with targeted pre-treatment and extraction cleaning.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Heavily Used Seat Cushions</div><div class="trust-card-desc">Deep-cleaned to lift soil built up from regular use.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Food & Drink Spills</div><div class="trust-card-desc">Spot-treated based on fabric type and stain age.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Visible Stains</div><div class="trust-card-desc">Pre-treated and spot-cleaned based on fabric and stain type.</div></div>
       <div class="trust-card"><div class="trust-card-title">Pet Hair</div><div class="trust-card-desc">Removed during vacuuming and extraction cleaning.</div></div>
-      <div class="trust-card"><div class="trust-card-title">Visible Staining</div><div class="trust-card-desc">Treated with targeted pre-treatment before extraction.</div></div>
-      <div class="trust-card"><div class="trust-card-title">Everyday Soil & Buildup</div><div class="trust-card-desc">Lifted from deep in the fabric with professional equipment.</div></div>
-      <div class="trust-card"><div class="trust-card-title">Household Odor Concerns</div><div class="trust-card-desc">Light odor concerns can often improve with cleaning; stronger concerns are assessed first.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Fabric Concerns</div><div class="trust-card-desc">Assessed from photos so the right method is used for your chair.</div></div>
     </div>
   </section>
 
   <section id="included" class="bg-tint">
     <p class="eyebrow">Our process</p>
     <h2 class="sec-title">What's Included</h2>
-    <p class="sec-sub">The exact cleaning method is adjusted to the material and condition. A typical sofa cleaning may include:</p>
+    <p class="sec-sub">The exact cleaning method is adjusted to the material and condition. A typical chair cleaning may include:</p>
     <div class="proc-grid">
-      <div class="proc"><div class="proc-num">1</div><div class="proc-title">Fabric Inspection</div><div class="proc-desc">Checking fabric and condition before starting.</div></div>
-      <div class="proc"><div class="proc-num">2</div><div class="proc-title">Dry Soil Removal</div><div class="proc-desc">Removal of accessible dry soil, crumbs and hair.</div></div>
+      <div class="proc"><div class="proc-num">1</div><div class="proc-title">Inspection</div><div class="proc-desc">Checking fabric and condition before starting.</div></div>
+      <div class="proc"><div class="proc-num">2</div><div class="proc-title">Dry-Soil & Hair Removal</div><div class="proc-desc">Removal of accessible dry soil and hair.</div></div>
       <div class="proc"><div class="proc-num">3</div><div class="proc-title">Pre-Treatment</div><div class="proc-desc">Appropriate pre-treatment applied to stains and heavily soiled areas.</div></div>
       <div class="proc"><div class="proc-num">4</div><div class="proc-title">Spot Treatment</div><div class="proc-desc">Standard spot treatment for visible stains.</div></div>
       <div class="proc"><div class="proc-num">5</div><div class="proc-title">Extraction Cleaning</div><div class="proc-desc">Controlled extraction cleaning when appropriate for the material, lifting dirt and residue from the fabric.</div></div>
       <div class="proc"><div class="proc-num">6</div><div class="proc-title">Moisture Extraction</div><div class="proc-desc">Additional moisture extraction to speed up drying.</div></div>
       <div class="proc"><div class="proc-num">7</div><div class="proc-title">Final Inspection</div><div class="proc-desc">Checking results and addressing any remaining concerns.</div></div>
-      <div class="proc"><div class="proc-num">8</div><div class="proc-title">Drying Guidance</div><div class="proc-desc">Advice on airflow and drying time before using the sofa again.</div></div>
+      <div class="proc"><div class="proc-num">8</div><div class="proc-title">Drying Guidance</div><div class="proc-desc">Advice on airflow and drying time before using the chair again.</div></div>
     </div>
   </section>
 
@@ -156,6 +155,7 @@ const breadcrumbSchema = {
       <h3><svg class="guarantee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>Realistic Results, Explained Upfront</h3>
       <p>We inspect the material first and explain realistic expectations before cleaning begins.</p>
       <p>If a stain or odor is unlikely to fully come out, we will tell you before the work begins.</p>
+      <p>Recliners and chairs with complex construction are assessed from photos before pricing.</p>
     </div>
   </section>
 
@@ -168,7 +168,7 @@ const breadcrumbSchema = {
   <section id="areas" class="bg-white">
     <p class="eyebrow">Where we work</p>
     <h2 class="sec-title">Service Area</h2>
-    <p class="sec-sub">Sofa cleaning is available throughout Buffalo, NY and the surrounding Western New York suburbs.</p>
+    <p class="sec-sub">Chair cleaning is available throughout Buffalo, NY and the surrounding Western New York suburbs.</p>
     <div class="area-chips">
       <span class="area-chip">Buffalo</span>
       <span class="area-chip">Amherst</span>
@@ -194,10 +194,10 @@ const breadcrumbSchema = {
 
   <section id="quote" class="bg-white">
     <p class="eyebrow">Ready to start?</p>
-    <h2 class="sec-title">Get Your Sofa Professionally Cleaned</h2>
-    <p class="sec-sub">Send photos of your sofa and we'll reply as soon as possible with a price.</p>
-    <ContactForm defaultService="Sofa & Sectional Cleaning" sourcePage="/sofa-cleaning-buffalo-ny" formId="sofa" />
+    <h2 class="sec-title">Get Your Chair Professionally Cleaned</h2>
+    <p class="sec-sub">Send photos of your chair and we'll reply as soon as possible with a price.</p>
+    <ContactForm defaultService="Chair & Armchair Cleaning" sourcePage="/chair-cleaning-buffalo-ny" formId="chair" />
   </section>
 
-  <OtherServices currentSlug="sofa-cleaning-buffalo-ny" />
+  <OtherServices currentSlug="chair-cleaning-buffalo-ny" />
 </Layout>

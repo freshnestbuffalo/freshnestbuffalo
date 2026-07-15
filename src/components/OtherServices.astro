@@ -1,0 +1,61 @@
+---
+interface Props {
+  currentSlug: string;
+}
+
+const { currentSlug } = Astro.props;
+
+const allServices = [
+  {
+    slug: 'sofa-cleaning-buffalo-ny',
+    name: 'Sofa &<br />Sectional',
+    label: 'Sofa & Sectional Cleaning',
+    price: 'Starts at $89',
+    img: '/images/sofa.png',
+    alt: 'Sofa and sectional upholstery cleaning icon',
+  },
+  {
+    slug: 'chair-cleaning-buffalo-ny',
+    name: 'Chair &<br />Armchair',
+    label: 'Chair & Armchair Cleaning',
+    price: 'Starts at $49',
+    img: '/images/chair.png',
+    alt: 'Chair and armchair upholstery cleaning icon',
+  },
+  {
+    slug: 'mattress-cleaning-buffalo-ny',
+    name: 'Mattress<br />Cleaning',
+    label: 'Mattress Cleaning',
+    price: 'Starts at $69',
+    img: '/images/mattress.png',
+    alt: 'Mattress upholstery cleaning icon',
+  },
+  {
+    slug: 'car-interior-cleaning-buffalo-ny',
+    name: 'Car Interior<br />Cleaning',
+    label: 'Car Interior Cleaning',
+    price: 'Starts at $79',
+    img: '/images/car.png',
+    alt: 'Car interior upholstery cleaning icon',
+  },
+];
+
+const otherServices = allServices.filter((s) => s.slug !== currentSlug);
+---
+
+<section id="other-services" class="bg-white">
+  <p class="eyebrow">Also available</p>
+  <h2 class="sec-title">Other Services</h2>
+  <p class="sec-sub">Fresh Nest also cleans these items throughout Buffalo, NY and the surrounding suburbs.</p>
+  <div class="svc-grid svc-grid--other">
+    {otherServices.map((s) => (
+      <article class="svc-card">
+        <a href={`/${s.slug}`} class="svc-card-link" aria-labelledby={`svc-name-${s.slug}`}><span class="visually-hidden">View {s.label} details</span></a>
+        <div class="svc-card-name" id={`svc-name-${s.slug}`} set:html={s.name} />
+        <div class="svc-card-price">{s.price}</div>
+        <img src={s.img} alt={s.alt} class="svc-card-img" width="120" height="120" loading="lazy" />
+        <a href={`/${s.slug}`} class="btn-quote">View Service <span class="quote-arrow">→</span></a>
+      </article>
+    ))}
+  </div>
+</section>

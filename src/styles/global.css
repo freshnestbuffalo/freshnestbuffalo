@@ -7,7 +7,7 @@ html{scroll-behavior:smooth}
 .bg-tint{background:#FAFAF8}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;height:68px;background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-bottom:1px solid #E5E2DA;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5%}
+.site-nav{position:fixed;top:0;left:0;right:0;height:68px;background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-bottom:1px solid #E5E2DA;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5%}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
 .logo img{height:42px;width:auto}
 .logo-text{line-height:1.2}
@@ -80,6 +80,7 @@ section{padding:80px 5%}
 
 /* SERVICES (homepage) */
 .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.svc-grid--other{grid-template-columns:repeat(3,1fr)}
 .svc-card{position:relative;background:#F2EFE9;border-radius:20px;padding:1.5rem;display:flex;flex-direction:column;transition:transform .22s ease,box-shadow .22s ease}
 .svc-card--sofa{cursor:pointer}
 .svc-card-link{position:absolute;inset:0;border-radius:20px;z-index:1}
@@ -161,14 +162,6 @@ section{padding:80px 5%}
 .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:#2D6A4F}
 .fg input:focus-visible,.fg select:focus-visible,.fg textarea:focus-visible{outline:2px solid #2D6A4F;outline-offset:3px}
 .fg textarea{min-height:80px;resize:vertical}
-.upload{border:2px dashed #E5E2DA;border-radius:10px;padding:1.25rem;text-align:center;cursor:pointer;transition:border-color .2s ease;margin-bottom:12px}
-@media(hover:hover){
-  .upload:hover{border-color:#2D6A4F}
-}
-.upload input{display:none}
-.upload-icon{font-size:24px;margin-bottom:.35rem}
-.upload-txt{font-size:13px;color:#888}
-.upload-txt strong{color:#40916C}
 .btn-submit{width:100%;background:#2D6A4F;color:#fff;border:none;border-radius:100px;padding:14px;font-size:15px;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;transition:background .2s ease}
 @media(hover:hover){
   .btn-submit:hover{background:#40916C}
@@ -190,6 +183,7 @@ footer{background:#1A1A18;padding:2rem 5%;display:flex;justify-content:space-bet
 .foot-brand small{font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:.06em}
 footer p{font-size:13px;color:rgba(255,255,255,0.45)}
 footer a{color:rgba(255,255,255,0.45);text-decoration:none;transition:color .2s ease}
+.foot-services{display:flex;flex-direction:column;gap:6px;font-size:13px}
 @media(hover:hover){
   footer a:hover{color:#74C69D}
 }

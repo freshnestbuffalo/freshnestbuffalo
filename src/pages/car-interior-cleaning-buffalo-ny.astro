@@ -1,0 +1,194 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Cta from '../components/Cta.astro';
+import Faq from '../components/Faq.astro';
+import ContactForm from '../components/ContactForm.astro';
+import OtherServices from '../components/OtherServices.astro';
+
+const faqItems = [
+  {
+    q: 'How much does car seat cleaning cost in Buffalo, NY?',
+    a: 'Car seat and interior upholstery cleaning starts at $79. The final price depends on vehicle size, seat material, condition and stains, confirmed after a photo estimate.',
+  },
+  {
+    q: 'Is this a full auto-detailing service?',
+    a: 'No. Fresh Nest provides focused cleaning of fabric seats and interior upholstery — not exterior washing, polishing, dashboard restoration, leather repair or full carpet detailing.',
+  },
+  {
+    q: 'Do you clean fabric seats?',
+    a: "Yes, fabric seats and interior upholstery are our focus. Send photos of the seats and surfaces you'd like cleaned for a quote.",
+  },
+  {
+    q: 'Can you help with stains and pet hair?',
+    a: 'Yes. Stained fabric seats and pet hair are common jobs. Results depend on the fabric and how long the stain has set — we explain realistic expectations before starting.',
+  },
+  {
+    q: 'How long will the seats take to dry?',
+    a: 'Drying time depends on fabric, airflow, humidity and the amount of cleaning required. We provide drying and ventilation guidance before we finish.',
+  },
+  {
+    q: 'What photos should I send for a quote?',
+    a: 'A few clear photos of the seats and any stained or heavily used areas help us give an accurate quote before your appointment.',
+  },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Car Interior Cleaning',
+  serviceType: 'Upholstery Cleaning',
+  url: 'https://freshnestbuffalo.com/car-interior-cleaning-buffalo-ny',
+  provider: {
+    '@id': 'https://freshnestbuffalo.com/#business',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Buffalo' },
+    { '@type': 'City', name: 'Amherst' },
+    { '@type': 'City', name: 'Williamsville' },
+    { '@type': 'City', name: 'Clarence' },
+    { '@type': 'City', name: 'East Amherst' },
+    { '@type': 'City', name: 'Cheektowaga' },
+    { '@type': 'City', name: 'Lancaster' },
+    { '@type': 'City', name: 'Tonawanda' },
+    { '@type': 'City', name: 'West Seneca' },
+    { '@type': 'City', name: 'Orchard Park' },
+    { '@type': 'City', name: 'Depew' },
+  ],
+  offers: {
+    '@type': 'Offer',
+    priceSpecification: { '@type': 'PriceSpecification', minPrice: '79', priceCurrency: 'USD' },
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://freshnestbuffalo.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Car Interior Cleaning Buffalo NY', item: 'https://freshnestbuffalo.com/car-interior-cleaning-buffalo-ny' },
+  ],
+};
+---
+
+<Layout
+  title="Car Seat Cleaning Buffalo, NY | Fresh Nest"
+  description="Professional fabric car seat and vehicle upholstery cleaning in Buffalo. Help with spills, stains, pet hair and everyday buildup. Starting at $79."
+  canonical="https://freshnestbuffalo.com/car-interior-cleaning-buffalo-ny"
+  extraSchemas={[serviceSchema, breadcrumbSchema]}
+>
+  <div class="hero" id="home">
+    <div class="hero-left">
+      <div class="badge">Owner-operated · Buffalo, NY</div>
+      <h1>Car Seat &<br /><em>Vehicle Upholstery Cleaning</em><br />in Buffalo, NY</h1>
+      <p class="hero-sub">Stained fabric seats, food or drink spills, pet hair, child-related messes or a heavily used driver's seat? Send photos and get a clear quote before your appointment.</p>
+      <Cta
+        buttons={[
+          { label: 'Get a Free Photo Quote', href: '#quote', variant: 'primary' },
+          { label: 'Call (716) 204-6437', href: 'tel:+17162046437', variant: 'secondary' },
+        ]}
+      />
+      <div class="hero-stats">
+        <div><div class="stat-num">$79</div><div class="stat-label">Starting price</div></div>
+        <div><div class="stat-num">Photos</div><div class="stat-label">For an accurate quote</div></div>
+        <div><div class="stat-num">Free</div><div class="stat-label">Estimates</div></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="/images/owner.png" alt="Owner of Fresh Nest Upholstery Cleaning serving Buffalo, NY" />
+    </div>
+  </div>
+
+  <section id="pricing" class="bg-white">
+    <p class="eyebrow">Starting at $79</p>
+    <h2 class="sec-title">Honest, Upfront Starting Price</h2>
+    <p class="sec-sub">Final pricing depends on vehicle size, seat material, condition, stains, pet hair and the surfaces being cleaned. Send photos for an exact quote before your appointment.</p>
+  </section>
+
+  <section id="focus" class="bg-tint">
+    <p class="eyebrow">What this service is</p>
+    <h2 class="sec-title">Focused Fabric Seat & Upholstery Cleaning</h2>
+    <p class="sec-sub">Fresh Nest provides focused cleaning of fabric seats and interior upholstery — this is not a full auto-detailing package. It does not include exterior washing, polishing, dashboard restoration, leather repair, full carpet detailing or complete vehicle-detailing services.</p>
+  </section>
+
+  <section id="problems" class="bg-white">
+    <p class="eyebrow">What we treat</p>
+    <h2 class="sec-title">Common Vehicle Upholstery Problems We Treat</h2>
+    <p class="sec-sub">Every fabric and stain responds differently to treatment.</p>
+    <div class="trust-grid">
+      <div class="trust-card"><div class="trust-card-title">Stained Fabric Seats</div><div class="trust-card-desc">Spot-treated based on fabric type and how long the stain has set.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Food & Drink Spills</div><div class="trust-card-desc">Treated with appropriate pre-treatment and spot cleaning.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Pet Hair</div><div class="trust-card-desc">Removed during vacuuming and extraction cleaning.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Child-Related Messes</div><div class="trust-card-desc">Assessed first — results depend on the material and how long it has set.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Heavily Used Driver's Seat</div><div class="trust-card-desc">Deep-cleaned to lift soil built up from daily use.</div></div>
+      <div class="trust-card"><div class="trust-card-title">Everyday Buildup</div><div class="trust-card-desc">Lifted from the fabric with professional equipment.</div></div>
+    </div>
+  </section>
+
+  <section id="included" class="bg-tint">
+    <p class="eyebrow">Our process</p>
+    <h2 class="sec-title">What's Included</h2>
+    <p class="sec-sub">The exact cleaning method is adjusted to the material and condition. A typical vehicle upholstery cleaning may include:</p>
+    <div class="proc-grid">
+      <div class="proc"><div class="proc-num">1</div><div class="proc-title">Fabric Inspection</div><div class="proc-desc">Inspection of fabric seat material and condition before starting.</div></div>
+      <div class="proc"><div class="proc-num">2</div><div class="proc-title">Vacuuming</div><div class="proc-desc">Vacuuming of accessible seat and upholstery surfaces.</div></div>
+      <div class="proc"><div class="proc-num">3</div><div class="proc-title">Pre-Treatment</div><div class="proc-desc">Appropriate pre-treatment applied to stains and heavily soiled areas.</div></div>
+      <div class="proc"><div class="proc-num">4</div><div class="proc-title">Spot Treatment</div><div class="proc-desc">Standard spot treatment for visible stains.</div></div>
+      <div class="proc"><div class="proc-num">5</div><div class="proc-title">Extraction Cleaning</div><div class="proc-desc">Controlled extraction cleaning when appropriate for the material, lifting dirt and residue from the fabric.</div></div>
+      <div class="proc"><div class="proc-num">6</div><div class="proc-title">Moisture Extraction</div><div class="proc-desc">Additional moisture extraction to speed up drying.</div></div>
+      <div class="proc"><div class="proc-num">7</div><div class="proc-title">Final Inspection</div><div class="proc-desc">Checking results and addressing any remaining concerns.</div></div>
+      <div class="proc"><div class="proc-num">8</div><div class="proc-title">Drying & Ventilation Guidance</div><div class="proc-desc">Advice on ventilation and drying time before the vehicle is used again.</div></div>
+    </div>
+  </section>
+
+  <section id="expectations" class="bg-white">
+    <p class="eyebrow">Honesty first</p>
+    <h2 class="sec-title">Honest Expectations</h2>
+    <div class="guarantee-box">
+      <h3><svg class="guarantee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>Realistic Results, Explained Upfront</h3>
+      <p>We inspect the fabric first and explain realistic expectations before cleaning begins.</p>
+      <p>Light household odor concerns may improve with cleaning. Strong, deep or biological odors require assessment and may not be fully removable.</p>
+    </div>
+  </section>
+
+  <section id="drying" class="bg-tint">
+    <p class="eyebrow">Drying time</p>
+    <h2 class="sec-title">How Long It Takes To Dry</h2>
+    <p class="sec-sub">Drying time depends on fabric, airflow, humidity and the amount of cleaning required. We provide drying and ventilation guidance before we finish.</p>
+  </section>
+
+  <section id="areas" class="bg-white">
+    <p class="eyebrow">Where we work</p>
+    <h2 class="sec-title">Service Area</h2>
+    <p class="sec-sub">Car seat and vehicle upholstery cleaning is available throughout Buffalo, NY and the surrounding Western New York suburbs.</p>
+    <div class="area-chips">
+      <span class="area-chip">Buffalo</span>
+      <span class="area-chip">Amherst</span>
+      <span class="area-chip">Williamsville</span>
+      <span class="area-chip">Clarence</span>
+      <span class="area-chip">East Amherst</span>
+      <span class="area-chip">Cheektowaga</span>
+      <span class="area-chip">Lancaster</span>
+      <span class="area-chip">Tonawanda</span>
+      <span class="area-chip">West Seneca</span>
+      <span class="area-chip">Orchard Park</span>
+      <span class="area-chip">Depew</span>
+    </div>
+    <p class="area-note">Don't see your city? Call or text me. If you're within about 30–40 minutes of Buffalo, I'll usually come to you.</p>
+  </section>
+
+  <section id="faq" class="bg-tint">
+    <p class="eyebrow">Questions</p>
+    <h2 class="sec-title">Frequently Asked Questions</h2>
+    <p class="sec-sub">Straight answers before you book.</p>
+    <Faq items={faqItems} />
+  </section>
+
+  <section id="quote" class="bg-white">
+    <p class="eyebrow">Ready to start?</p>
+    <h2 class="sec-title">Get Your Car Seats Professionally Cleaned</h2>
+    <p class="sec-sub">Send photos of your seats and we'll reply as soon as possible with a price.</p>
+    <ContactForm defaultService="Car Interior Cleaning" sourcePage="/car-interior-cleaning-buffalo-ny" formId="car" />
+  </section>
+
+  <OtherServices currentSlug="car-interior-cleaning-buffalo-ny" />
+</Layout>
