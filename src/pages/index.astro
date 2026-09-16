@@ -115,6 +115,30 @@ const faqItems = [
     </div>
   </section>
 
+  <section id="cleaning-tips" class="bg-tint" aria-labelledby="cleaning-tips-title">
+    <h2 id="cleaning-tips-title" class="sec-title">Cleaning Tips</h2>
+    <p class="tips-introduction">Spills, everyday care, or deciding whether to clean your couch? Start with these practical guides from Fresh Nest.</p>
+    <div class="home-tips-grid">
+      <article class="home-tip">
+        <h3><a href="/tips/is-professional-couch-cleaning-worth-it">Is Professional Couch Cleaning Worth It?</a></h3>
+        <p>How to decide whether to clean, repair, or replace your sofa.</p>
+      </article>
+      <article class="home-tip">
+        <h3><a href="/tips/coffee-tea-juice-spill-on-couch">Spilled Coffee, Tea, or Juice on Your Couch?</a></h3>
+        <p>What to do first, what to avoid, and when to ask for help.</p>
+      </article>
+      <article class="home-tip">
+        <h3><a href="/tips/how-often-to-clean-your-couch">How Often Should You Clean Your Couch?</a></h3>
+        <p>Use your furniture’s condition and household habits to plan its care.</p>
+      </article>
+      <article class="home-tip">
+        <h3><a href="/tips/how-long-does-upholstery-take-to-dry">How Long Does Upholstery Take to Dry?</a></h3>
+        <p>What affects drying and what to check before using your furniture again.</p>
+      </article>
+    </div>
+    <a href="/tips" class="all-tips-link">View all cleaning tips <span aria-hidden="true">→</span></a>
+  </section>
+
   <section id="trust" class="bg-white">
     <p class="eyebrow">Why Fresh Nest</p>
     <h2 class="sec-title">Built On Trust, Not Promises</h2>
@@ -217,3 +241,18 @@ const faqItems = [
     </div>
   </section>
 </Layout>
+
+<style>
+  #cleaning-tips { padding-block: 48px; scroll-margin-top: 84px; }
+  .tips-introduction { max-width: 680px; color: #52524B; font-size: 16px; line-height: 1.7; margin-bottom: 24px; }
+  .home-tips-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+  .home-tip { background: #F2EFE9; border-radius: 16px; padding: 24px; min-width: 0; }
+  .home-tip h3 { font-family: 'Playfair Display', serif; font-size: 21px; line-height: 1.35; margin-bottom: 12px; }
+  .home-tip a { display: inline-block; min-height: 44px; color: #24563F; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+  .home-tip p { color: #52524B; font-size: 15px; line-height: 1.65; }
+  .all-tips-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-top: 20px; color: #24563F; font-weight: 600; text-underline-offset: 4px; }
+  .home-tip a:focus-visible, .all-tips-link:focus-visible { outline: 2px solid #2D6A4F; outline-offset: 4px; border-radius: 2px; }
+  .home-tip a:hover, .all-tips-link:hover { color: #163B2A; text-decoration-thickness: 2px; }
+  @media (max-width: 1100px) { .home-tips-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 600px) { .home-tips-grid { grid-template-columns: 1fr; gap: 12px; } .home-tip { padding: 20px; } }
+</style>
