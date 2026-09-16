@@ -1,0 +1,126 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const articles = [
+  {
+    slug: 'is-professional-couch-cleaning-worth-it',
+    title: 'Is Professional Couch Cleaning Worth It? When to Clean vs. Replace Your Sofa',
+    excerpt: 'Is your couch dirty or worn out? Learn when professional cleaning makes sense, when to replace it, and how to get a Fresh Nest estimate in Buffalo.',
+    img: '/images/owner.png',
+    imgAlt: 'Fresh Nest technician performing professional upholstery extraction cleaning in Buffalo, NY',
+  },
+  {
+    slug: 'coffee-tea-juice-spill-on-couch',
+    title: 'Spilled a Drink on Your Couch? Start Here',
+    excerpt: 'First steps after a coffee, tea or juice spill, plus when to ask for help with the remaining stain.',
+    img: '/images/owner.png',
+    imgAlt: 'Fresh Nest technician performing professional upholstery extraction cleaning in Buffalo, NY',
+  },
+  {
+    slug: 'how-often-to-clean-your-couch',
+    title: 'How Often Should You Clean Your Couch?',
+    excerpt: 'Use your furniture’s condition and your household routine to decide when professional cleaning makes sense.',
+    img: '/images/owner.png',
+    imgAlt: 'Fresh Nest technician performing professional upholstery extraction cleaning in Buffalo, NY',
+  },
+  {
+    slug: 'how-long-does-upholstery-take-to-dry',
+    title: 'When Can You Use Furniture After Cleaning?',
+    excerpt: 'What affects upholstery drying, how to prepare your room, and what to check before using furniture again.',
+    img: '/images/owner.png',
+    imgAlt: 'Fresh Nest technician performing professional upholstery extraction cleaning in Buffalo, NY',
+  },
+];
+---
+
+<Layout
+  title="Cleaning Tips | Fresh Nest Upholstery Cleaning"
+  description="Practical upholstery cleaning guidance from Fresh Nest — when to clean, when to replace, and how to keep furniture looking its best in Buffalo, NY."
+  canonical="https://freshnestbuffalo.com/tips"
+>
+  <section id="tips-hero" class="bg-tint">
+    <p class="eyebrow">Cleaning Tips</p>
+    <h1 class="sec-title">Cleaning Tips</h1>
+    <p class="sec-sub">Practical, honest guidance on caring for upholstery — from a Buffalo, NY upholstery cleaner.</p>
+  </section>
+
+  <section id="tips-list" class="bg-white">
+    <div class="tips-grid">
+      {articles.map((a) => (
+        <article class="tip-card">
+          <a href={`/tips/${a.slug}`} class="tip-card-link">
+            <img src={a.img} alt={a.imgAlt} class="tip-card-img" width="360" height="240" loading="lazy" />
+            <div class="tip-card-body">
+              <h2 class="tip-card-title">{a.title}</h2>
+              <p class="tip-card-desc">{a.excerpt}</p>
+              <span class="tip-card-cta">Read the article <span class="tip-card-arrow">→</span></span>
+            </div>
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+</Layout>
+
+<style>
+  #tips-hero {
+    padding: 48px 5% 32px;
+  }
+  #tips-list {
+    padding: 24px 5% 64px;
+  }
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+    gap: 24px;
+  }
+  .tip-card {
+    background: #F2EFE9;
+    border-radius: 20px;
+    overflow: hidden;
+    max-width: 360px;
+  }
+  .tip-card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+  .tip-card-img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: top center;
+  }
+  .tip-card-body {
+    padding: 1.5rem;
+  }
+  .tip-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1A1A18;
+    margin-bottom: 0.6rem;
+  }
+  .tip-card-desc {
+    font-size: 14px;
+    color: #6B6B62;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  .tip-card-cta {
+    font-size: 13px;
+    font-weight: 600;
+    color: #2D6A4F;
+  }
+  .tip-card-arrow {
+    display: inline-block;
+    transition: transform 0.22s ease;
+  }
+  @media (hover: hover) {
+    .tip-card:hover .tip-card-arrow {
+      transform: translateX(3px);
+    }
+  }
+</style>

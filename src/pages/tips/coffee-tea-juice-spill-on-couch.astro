@@ -1,0 +1,170 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Cta from '../../components/Cta.astro';
+---
+
+<Layout
+  title="Coffee, Tea or Juice on Your Couch? | Fresh Nest"
+  description="Spilled a drink on your couch? Learn what to do first, what to avoid, and when to ask Fresh Nest in Buffalo for a furniture cleaning estimate."
+  canonical="https://freshnestbuffalo.com/tips/coffee-tea-juice-spill-on-couch"
+>
+  <section id="article-hero" class="bg-tint">
+    <div class="article-intro">
+      <a href="/tips" class="tips-back-link">&larr; Back to Cleaning Tips</a>
+      <p class="eyebrow">Cleaning Tips</p>
+      <h1 class="sec-title">Spilled Coffee, Tea or Juice on Your Couch? What to Do First</h1>
+      <p class="sec-sub">A drink spill is a reason to act promptly, but reaching for the nearest cleaner can complicate the job. For most fabric upholstery, start by gently blotting up the liquid with a clean, dry, white absorbent cloth. Check the furniture's care instructions before adding water or a cleaning product.</p>
+      <img
+        src="/images/owner.png"
+        alt="Fresh Nest technician performing professional upholstery extraction cleaning in Buffalo, NY"
+        class="article-hero-img"
+        width="1006"
+        height="1563"
+      />
+    </div>
+  </section>
+
+  <section id="article-body" class="bg-white">
+    <div class="article-content">
+      <p>These steps are intended for fabric sofas and chairs. Leather and specialty materials need their own care instructions.</p>
+
+      <h2>1. Absorb the liquid without scrubbing</h2>
+
+      <p>Move the cup away and gently press the cloth against the wet area. Switch to a clean, dry part of the cloth as it absorbs liquid. Avoid rubbing back and forth or pressing hard enough to push the spill deeper.</p>
+
+      <p>Do not pour water onto the cushion to rinse it. A small surface spill and a soaked cushion are different cleaning problems.</p>
+
+      <h2>2. Check the care label before treating the spot</h2>
+
+      <p>Look for the manufacturer's care instructions, often attached beneath the furniture or a cushion. The permitted cleaning method depends on the upholstery. A product labeled for upholstery is not automatically suitable for every fabric.</p>
+
+      <p>If the label is missing or unclear, stop after absorbing the spill and ask for advice. A zipper does not by itself mean a cushion cover can be machine-washed.</p>
+
+      <p>When the manufacturer permits a particular spot-cleaning method, follow both its instructions and the cleaner's directions, including any hidden-area test. Do not mix products or layer several stain removers onto the same spot.</p>
+
+      <h2>3. Note what was in the drink</h2>
+
+      <p>Tell your cleaner whether it was black coffee, coffee with milk or creamer, plain tea, sweetened tea, or juice. Mention approximately how much spilled and when it happened.</p>
+
+      <p>The drink and any additions help explain what may remain in the fabric. Also say whether the liquid reached a seam, the cushion underside, or the furniture mechanism. If a spill reaches electrical components in powered furniture, stop using the powered functions and follow the manufacturer's safety guidance.</p>
+
+      <h2>What if a mark remains after drying?</h2>
+
+      <p>A visible mark does not tell you which treatment to use next. Send a photo instead of repeatedly wetting or scrubbing it. A cleaner needs to consider the fabric, the spill, and anything already applied.</p>
+
+      <p>Keep the bottle or photograph its label if you used a stain remover. There is no need to hide a home cleaning attempt; knowing about it helps with the assessment.</p>
+
+      <p>An older stain can still be assessed. Explain its age as accurately as you can rather than assuming it is either removable or permanent.</p>
+
+      <h2>Does the whole couch need cleaning?</h2>
+
+      <p>That depends on the affected area and the condition of the rest of the upholstery. One spill does not automatically mean the whole couch needs treatment. If the seats and arms are also soiled, a full cleaning may make more sense than concentrating on one mark.</p>
+
+      <p>Read about our <a href="/sofa-cleaning-buffalo-ny">sofa and couch cleaning service</a> or <a href="/chair-cleaning-buffalo-ny">chair and armchair cleaning</a> to see how Fresh Nest approaches the job.</p>
+
+      <h2>Get help with a spill from Fresh Nest</h2>
+
+      <p>Still have a coffee, tea or juice mark on your furniture? Fresh Nest Upholstery Cleaning serves Buffalo and surrounding communities with owner-operated furniture cleaning.</p>
+
+      <p>Submit your details, then send a full photo of the furniture, a close-up of the spot, and a care-label photo if available. Tell us what spilled and what you have tried. We'll review the information, discuss the cleaning options, and provide a free estimate before scheduling.</p>
+    </div>
+  </section>
+
+  <section id="final-cta" class="bg-tint">
+    <Cta
+      wrapperClass="cta-btns"
+      buttons={[
+        { label: 'Get Your Free Furniture Cleaning Estimate', href: '/#contact', variant: 'primary' },
+      ]}
+    />
+  </section>
+
+  <section id="tips-footer-nav" class="bg-white">
+    <a href="/tips" class="tips-back-link">&larr; Back to Cleaning Tips</a>
+  </section>
+</Layout>
+
+<style>
+  .tips-back-link {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #2D6A4F;
+    text-decoration: none;
+    margin-bottom: 1.25rem;
+  }
+  @media (hover: hover) {
+    .tips-back-link:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+  }
+  #article-hero {
+    padding: 40px 5% 28px;
+  }
+  #article-body {
+    padding: 8px 5% 48px;
+  }
+  #final-cta {
+    padding: 40px 5%;
+  }
+  #tips-footer-nav {
+    padding: 16px 5% 48px;
+  }
+  .article-intro {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .article-intro .sec-sub {
+    max-width: none;
+    margin-bottom: 1.5rem;
+  }
+  .article-hero-img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 260px;
+    border-radius: 16px;
+    margin: 0 auto;
+  }
+  .article-content {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .article-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 2.6vw, 28px);
+    font-weight: 700;
+    line-height: 1.25;
+    color: #1A1A18;
+    margin: 2.5rem 0 1rem;
+  }
+  .article-content p {
+    font-size: 16px;
+    line-height: 1.75;
+    color: #1A1A18;
+    margin-bottom: 1.25rem;
+  }
+  .article-content ul,
+  .article-content ol {
+    margin: 0 0 1.25rem;
+    padding-left: 1.35rem;
+  }
+  .article-content li {
+    font-size: 16px;
+    line-height: 1.75;
+    color: #1A1A18;
+    margin-bottom: 0.5rem;
+  }
+  .article-content a {
+    color: #2D6A4F;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  @media (hover: hover) {
+    .article-content a:hover {
+      color: #1B4332;
+    }
+  }
+</style>
