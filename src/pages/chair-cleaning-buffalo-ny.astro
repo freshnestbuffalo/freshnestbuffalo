@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Cta from '../components/Cta.astro';
 import SmsCta from '../components/SmsCta.astro';
+import CallOrText from '../components/CallOrText.astro';
 import Faq from '../components/Faq.astro';
 import ContactForm from '../components/ContactForm.astro';
 import OtherServices from '../components/OtherServices.astro';
@@ -86,9 +87,10 @@ const breadcrumbSchema = {
       <Cta
         buttons={[
           { label: 'Get a Free Quote', href: '#quote', variant: 'primary' },
-          { label: 'Call (716) 204-6437', href: 'tel:+17162046437', variant: 'secondary' },
         ]}
-      />
+      >
+        <CallOrText />
+      </Cta>
       <div class="hero-stats">
         <div><div class="stat-num">$49</div><div class="stat-label">Starting price</div></div>
         <div><div class="stat-num">Photos</div><div class="stat-label">For an accurate quote</div></div>

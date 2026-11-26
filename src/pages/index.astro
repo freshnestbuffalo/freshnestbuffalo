@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Cta from '../components/Cta.astro';
 import SmsCta from '../components/SmsCta.astro';
+import CallOrText from '../components/CallOrText.astro';
 import Faq from '../components/Faq.astro';
 import ContactForm from '../components/ContactForm.astro';
 
@@ -63,9 +64,10 @@ const faqItems = [
       <Cta
         buttons={[
           { label: 'Get a Free Quote', href: '/#contact', variant: 'primary' },
-          { label: 'Call (716) 204-6437', href: 'tel:+17162046437', variant: 'secondary' },
         ]}
-      />
+      >
+        <CallOrText />
+      </Cta>
       <div class="hero-stats">
         <div><div class="stat-num">Photos</div><div class="stat-label">By text or email</div></div>
         <div><div class="stat-num">Ask</div><div class="stat-label">About current availability</div></div>

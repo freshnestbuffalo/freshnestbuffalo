@@ -1,0 +1,64 @@
+---
+// Hero secondary contact action.
+// Mobile/tablet (max-width 900px): the original "Call (716) 204-6437" button,
+//   because the separate "Text Photos for a Free Quote" button is already shown there.
+// Desktop (min-width 901px): one compact pill reading "Call or Text (716) 204-6437"
+//   with two separate working links: tel: for calling, sms: for texting.
+---
+
+<a href="tel:+17162046437" class="btn-secondary call-text-mobile">Call (716) 204-6437</a>
+<div class="call-text" role="group" aria-label="Call or text (716) 204-6437">
+  <a href="tel:+17162046437" class="call-text-link" aria-label="Call (716) 204-6437">Call</a>
+  <span class="call-text-sep">or</span>
+  <a href="sms:+17162046437" class="call-text-link" aria-label="Text (716) 204-6437">Text</a>
+  <span class="call-text-num">(716) 204-6437</span>
+</div>
+
+<style>
+  .call-text {
+    display: none;
+  }
+  @media (min-width: 901px) {
+    .call-text-mobile {
+      display: none;
+    }
+    .call-text {
+      display: inline-flex;
+      align-items: center;
+      border: 2px solid #E5E2DA;
+      border-radius: 100px;
+      padding: 0 22px 0 10px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #1A1A18;
+      background: transparent;
+    }
+    .call-text-link {
+      color: #2D6A4F;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      padding: 14px 6px;
+      border-radius: 100px;
+      transition: background .2s ease, color .2s ease;
+    }
+    .call-text-link:focus-visible {
+      outline: 2px solid #2D6A4F;
+      outline-offset: -2px;
+    }
+    .call-text-sep {
+      color: #6B6B62;
+      font-weight: 500;
+      padding: 0 2px;
+    }
+    .call-text-num {
+      padding-left: 6px;
+      white-space: nowrap;
+    }
+  }
+  @media (min-width: 901px) and (hover: hover) {
+    .call-text-link:hover {
+      background: #D8F3DC;
+      color: #1B4332;
+    }
+  }
+</style>
