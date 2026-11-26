@@ -1,4 +1,6 @@
 ---
+import SmsCta from './SmsCta.astro';
+
 interface Props {
   defaultService?: string;
   sourcePage: string;
@@ -39,6 +41,7 @@ const formElId = `form-${formId}`;
 ---
 
 <div class="c-form">
+  <SmsCta variant="form" />
   <div class="c-form-trust">
     <p class="c-form-trust-title">We reply as soon as possible</p>
     <p class="c-form-trust-sub">No spam. No pressure. Just a real estimate.</p>
@@ -61,7 +64,7 @@ const formElId = `form-${formId}`;
       </select>
     </div>
     <div class="fg"><label for={zipId}>ZIP code</label><input type="text" id={zipId} name="zip" placeholder="14201" maxlength="5" /></div>
-    <p class="form-note">Send your details first. After submitting, you can text or email photos for a more accurate quote.</p>
+    <p class="form-note">After you submit the form, you can text or email photos for a more accurate quote.</p>
     <div class="fg"><label for={messageId}>Message (optional)</label><textarea id={messageId} name="message" placeholder="Describe your furniture, any stains or specific concerns..."></textarea></div>
     <button type="submit" class="btn-submit">Get My Free Quote</button>
     <p class="form-note">We reply as soon as possible · No spam ever</p>

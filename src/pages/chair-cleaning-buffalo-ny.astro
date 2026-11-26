@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Cta from '../components/Cta.astro';
+import SmsCta from '../components/SmsCta.astro';
 import Faq from '../components/Faq.astro';
 import ContactForm from '../components/ContactForm.astro';
 import OtherServices from '../components/OtherServices.astro';
@@ -81,6 +82,7 @@ const breadcrumbSchema = {
       <div class="badge">Owner-operated · Buffalo, NY</div>
       <h1>Professional<br /><em>Chair & Armchair Cleaning</em><br />in Buffalo, NY</h1>
       <p class="hero-sub">Darkened armrests, heavily used seat cushions, spills, visible stains, pet hair or fabric concerns? Send photos and get a clear quote before your appointment.</p>
+      <SmsCta variant="hero" />
       <Cta
         buttons={[
           { label: 'Get a Free Quote', href: '#quote', variant: 'primary' },
@@ -195,7 +197,7 @@ const breadcrumbSchema = {
   <section id="quote" class="bg-white">
     <p class="eyebrow">Ready to start?</p>
     <h2 class="sec-title">Get Your Chair Professionally Cleaned</h2>
-    <p class="sec-sub">Submit your details first. After submitting, you can text or email photos of your chair for a more accurate quote.</p>
+    <p class="sec-sub">Text photos of your chair to (716) 204-6437, or submit your details below and share photos afterward for a more accurate quote.</p>
     <ContactForm defaultService="Chair & Armchair Cleaning" sourcePage="/chair-cleaning-buffalo-ny" formId="chair" />
   </section>
 

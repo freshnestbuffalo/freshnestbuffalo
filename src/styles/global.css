@@ -210,7 +210,9 @@ footer a:focus-visible,
 @media(max-width:900px){
   .hero{grid-template-columns:1fr}
   .hero-right{height:380px;order:-1}
-  .svc-grid{grid-template-columns:1fr 1fr}
+  .svc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .svc-card-img{max-width:100%;height:auto}
+  .fg input,.fg select,.fg textarea{font-size:16px}
   .trust-grid{grid-template-columns:1fr}
   .ba-grid{grid-template-columns:1fr}
   .proc-grid{grid-template-columns:1fr 1fr}
@@ -232,12 +234,17 @@ footer a:focus-visible,
   .sticky-cta a{
     flex:1;
     text-align:center;
-    padding:13px;
+    padding:14px;
     border-radius:100px;
     font-size:14px;
     font-weight:600;
     text-decoration:none;
   }
+  .sticky-cta .text{background:#2D6A4F;color:#fff}
   .sticky-cta .call{background:#1A1A18;color:#fff}
-  .sticky-cta .estimate{background:#2D6A4F;color:#fff}
+  .sticky-cta .estimate{background:#fff;color:#2D6A4F;border:1.5px solid #2D6A4F;padding-top:12.5px;padding-bottom:12.5px}
+}
+
+@media(max-width:374px){
+  .svc-grid{grid-template-columns:1fr}
 }

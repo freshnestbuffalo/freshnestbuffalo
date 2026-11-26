@@ -1,0 +1,62 @@
+---
+// Mobile-only "Text Photos" call to action.
+// Uses a plain native sms: link (no prefilled message text) so it behaves the
+// same on iPhone and Android. Hidden on desktop (min-width 901px), where the
+// quote form and the visible phone number remain the main contact options.
+interface Props {
+  variant?: 'hero' | 'form';
+}
+
+const { variant = 'hero' } = Astro.props;
+---
+
+<div class={`sms-cta sms-cta--${variant}`}>
+  {variant === 'form' && <p class="sms-cta-title">Prefer to text?</p>}
+  <a href="sms:+17162046437" class="btn-primary sms-cta-btn">Text Photos for a Free Quote</a>
+  <p class="sms-cta-hint">Include photos of the whole piece, close-ups of any problem areas, and your ZIP code.</p>
+  {variant === 'form' && <p class="sms-cta-or">Or send your details with the form below.</p>}
+</div>
+
+<style>
+  .sms-cta {
+    display: none;
+  }
+  @media (max-width: 900px) {
+    .sms-cta {
+      display: block;
+    }
+    .sms-cta--hero {
+      margin-bottom: 1rem;
+    }
+    .sms-cta--form {
+      margin-bottom: 1.25rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid #E5E2DA;
+    }
+    .sms-cta-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    .sms-cta-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1A1A18;
+      margin-bottom: 0.75rem;
+    }
+    .sms-cta-hint {
+      font-size: 13px;
+      line-height: 1.5;
+      color: #6B6B62;
+      margin-top: 0.6rem;
+    }
+    .sms-cta-or {
+      font-size: 13px;
+      line-height: 1.5;
+      color: #6B6B62;
+      margin-top: 0.75rem;
+    }
+  }
+</style>

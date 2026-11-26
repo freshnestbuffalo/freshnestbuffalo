@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Cta from '../components/Cta.astro';
+import SmsCta from '../components/SmsCta.astro';
 import Faq from '../components/Faq.astro';
 import ContactForm from '../components/ContactForm.astro';
 
@@ -31,7 +32,7 @@ const faqItems = [
   },
   {
     q: 'How do I get a quote?',
-    a: "Submit the short form with your contact details and a brief description. After submitting, you can text or email photos for a more accurate quote. We'll review everything and reply with the price and current availability.",
+    a: "Text a few clear photos of the item, any stains or problem areas, and your ZIP code to (716) 204-6437. Or submit the short online form, then text or email photos for a more accurate quote. We'll review everything and reply with the price and current availability.",
   },
   {
     q: 'What equipment do you use?',
@@ -57,7 +58,8 @@ const faqItems = [
     <div class="hero-left">
       <div class="badge">Owner-operated · Buffalo, NY</div>
       <h1>Professional<br /><em>Upholstery Cleaning</em><br />in Buffalo, NY</h1>
-      <p class="hero-sub">Stains, spills, pet hair or everyday buildup? Submit your details, then text or email photos for a clear quote before your appointment.</p>
+      <p class="hero-sub">Stains, spills, pet hair or everyday buildup? Text photos from your phone or send a short online request for a clear quote before your appointment.</p>
+      <SmsCta variant="hero" />
       <Cta
         buttons={[
           { label: 'Get a Free Quote', href: '/#contact', variant: 'primary' },
@@ -65,7 +67,7 @@ const faqItems = [
         ]}
       />
       <div class="hero-stats">
-        <div><div class="stat-num">Photos</div><div class="stat-label">Sent after your request</div></div>
+        <div><div class="stat-num">Photos</div><div class="stat-label">By text or email</div></div>
         <div><div class="stat-num">Ask</div><div class="stat-label">About current availability</div></div>
         <div><div class="stat-num">Free</div><div class="stat-label">Estimates</div></div>
       </div>
@@ -192,8 +194,8 @@ const faqItems = [
     <p class="eyebrow">How it works</p>
     <h2 class="sec-title">4 Simple Steps</h2>
     <div class="proc-grid">
-      <div class="proc"><div class="proc-num">1</div><div class="proc-title">Submit Your Request</div><div class="proc-desc">Fill out the short form with your contact details and a brief description of the item.</div></div>
-      <div class="proc"><div class="proc-num">2</div><div class="proc-title">Send Photos</div><div class="proc-desc">After submitting, text or email a few clear photos, including any stains or problem areas.</div></div>
+      <div class="proc"><div class="proc-num">1</div><div class="proc-title">Text Photos or Send a Request</div><div class="proc-desc">Text a few photos to (716) 204-6437, or fill out the short online form with your contact details.</div></div>
+      <div class="proc"><div class="proc-num">2</div><div class="proc-title">Share the Details</div><div class="proc-desc">Show the whole piece and any stains or problem areas, and include your ZIP code. Used the form? Text or email photos afterward.</div></div>
       <div class="proc"><div class="proc-num">3</div><div class="proc-title">Get Your Quote</div><div class="proc-desc">We review your information and photos, then reply with the price and current availability.</div></div>
       <div class="proc"><div class="proc-num">4</div><div class="proc-title">I Come to You</div><div class="proc-desc">I arrive with the equipment and cleaning solutions. Please remove loose items and clear access around the piece.</div></div>
     </div>
@@ -232,7 +234,7 @@ const faqItems = [
     <div class="contact-wrap">
       <div class="contact-info">
         <h2>Get Your Free Quote</h2>
-        <p>Send your details first. After submitting, you can text or email photos for a more accurate quote. Serving Buffalo and surrounding areas.</p>
+        <p>Text photos to the number below, or send your details with the form and share photos afterward. Serving Buffalo and surrounding areas.</p>
         <a href="tel:+17162046437" class="contact-tel">(716) 204-6437</a>
         <p class="contact-note">Call or text — we reply as soon as possible</p>
         <a href="mailto:freshnestbuffalo@gmail.com" class="contact-email">freshnestbuffalo@gmail.com</a>
