@@ -64,8 +64,8 @@ const formElId = `form-${formId}`;
       </select>
     </div>
     <div class="fg"><label for={zipId}>ZIP code</label><input type="text" id={zipId} name="zip" placeholder="14201" maxlength="5" /></div>
-    <p class="form-note">After you submit the form, you can text or email photos for a more accurate quote.</p>
     <div class="fg"><label for={messageId}>Message (optional)</label><textarea id={messageId} name="message" placeholder="Describe your furniture, any stains or specific concerns..."></textarea></div>
+    <p class="form-photo-hint">Photos are optional. You can submit this form without them, and if you like, text or email photos afterward for a more accurate estimate.</p>
     <button type="submit" class="btn-submit">Get My Free Quote</button>
     <p class="form-note">We reply as soon as possible · No spam ever</p>
     <p id={statusId} class="form-note" aria-live="polite"></p>
@@ -108,7 +108,17 @@ const formElId = `form-${formId}`;
           headers: { Accept: 'application/json' },
         });
 
-        if (response.ok) {
+        // Formspree answers a JSON request with a 2xx status on success and
+        // includes an "errors" array when it rejects a submission. Redirect to
+        // the confirmation page only when the response is a success without errors.
+        let data = null;
+        try {
+          data = await response.json();
+        } catch (parseErr) {
+          data = null;
+        }
+        const hasErrors = !!(data && Array.isArray(data.errors) && data.errors.length);
+        if (response.ok && !hasErrors) {
           window.location.href = '/thank-you';
           return;
         }
@@ -127,3 +137,12 @@ const formElId = `form-${formId}`;
     });
   }
 </script>
+
+<style>
+  .form-photo-hint {
+    font-size: 13px;
+    line-height: 1.55;
+    color: #6B6B62;
+    margin: 2px 0 14px;
+  }
+</style>

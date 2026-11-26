@@ -10,29 +10,148 @@ import Cta from '../components/Cta.astro';
   robots="noindex, follow"
 >
   <section id="confirmation" class="bg-tint">
-    <h1 class="sec-title">Thank You — We Received Your Request</h1>
-    <p class="sec-sub">We'll review your information and reply as soon as possible.</p>
-  </section>
+    <div class="ty-card">
+      <div class="ty-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
+      </div>
+      <h1 class="ty-title">Thank you! We've received your request.</h1>
+      <p class="ty-lead">We'll review your information and contact you using the phone number you provided.</p>
+      <p class="ty-done">No additional action is required.</p>
 
-  <section id="photos" class="bg-white">
-    <h2 class="sec-title">Send Photos for a More Accurate Quote</h2>
-    <p class="sec-sub">Text or email a few clear photos of the item, including any stains or problem areas. Please include the name you used in the form.</p>
-    <Cta
-      wrapperClass="cta-btns"
-      buttons={[
-        { label: 'Text Photos to (716) 204-6437', href: 'sms:+17162046437?body=Hi%20Fresh%20Nest%2C%20I%20just%20submitted%20a%20quote%20request.%20Here%20are%20my%20photos.', variant: 'primary' },
-        { label: 'Email Photos', href: 'mailto:freshnestbuffalo@gmail.com?subject=Fresh%20Nest%20Photo%20Quote', variant: 'secondary' },
-      ]}
-    />
-    <p class="area-note">Phone: <a href="tel:+17162046437">(716) 204-6437</a> · Email: <a href="mailto:freshnestbuffalo@gmail.com">freshnestbuffalo@gmail.com</a></p>
-  </section>
+      <div class="ty-photos">
+        <h2 class="ty-h2">Optional: send a few photos</h2>
+        <p class="ty-text">Photos help us prepare a more accurate estimate. Send the whole piece and any stains or problem areas, and include the name you used in the form.</p>
+        <Cta
+          wrapperClass="cta-btns ty-btns"
+          buttons={[
+            { label: 'Text Photos to (716) 204-6437', href: 'sms:+17162046437', variant: 'primary' },
+            { label: 'Email Photos', href: 'mailto:freshnestbuffalo@gmail.com?subject=Fresh%20Nest%20Photo%20Quote', variant: 'secondary' },
+          ]}
+        />
+      </div>
 
-  <section id="final-cta" class="bg-tint">
-    <Cta
-      wrapperClass="cta-btns"
-      buttons={[
-        { label: 'Back to Home', href: '/', variant: 'secondary' },
-      ]}
-    />
+      <p class="ty-contact">Questions? Call or text <a href="tel:+17162046437">(716) 204-6437</a> · <a href="mailto:freshnestbuffalo@gmail.com">freshnestbuffalo@gmail.com</a></p>
+      <a href="/" class="ty-home">&larr; Back to Home</a>
+    </div>
   </section>
 </Layout>
+
+<style>
+  #confirmation {
+    padding: calc(68px + 48px) 5% 64px;
+  }
+  .ty-card {
+    max-width: 640px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #E5E2DA;
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+  }
+  .ty-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 1.25rem;
+    border-radius: 50%;
+    background: #D8F3DC;
+    color: #2D6A4F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ty-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 3.2vw, 34px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1A1A18;
+    margin-bottom: 0.75rem;
+    text-wrap: balance;
+  }
+  .ty-lead {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #52524B;
+    max-width: 480px;
+    margin: 0 auto 0.75rem;
+  }
+  .ty-done {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2D6A4F;
+    background: #D8F3DC;
+    border-radius: 100px;
+    padding: 6px 14px;
+  }
+  .ty-photos {
+    margin-top: 2rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid #E5E2DA;
+  }
+  .ty-h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: #1A1A18;
+    margin-bottom: 0.5rem;
+  }
+  .ty-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #6B6B62;
+    max-width: 480px;
+    margin: 0 auto 1.25rem;
+  }
+  .ty-contact {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #6B6B62;
+    margin-top: 1.5rem;
+  }
+  .ty-contact a {
+    color: #2D6A4F;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    white-space: nowrap;
+  }
+  .ty-home {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2D6A4F;
+    text-decoration: none;
+    padding: 8px 4px;
+  }
+  @media (hover: hover) {
+    .ty-home:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+  }
+  @media (max-width: 900px) {
+    #confirmation {
+      padding: calc(68px + 24px) 16px 40px;
+    }
+    .ty-card {
+      padding: 2rem 1.25rem;
+    }
+    .ty-btns a {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  /* The request is already submitted on this page: hide the site-wide sticky
+     "Get Estimate" bar so customers are not prompted to submit a second time.
+     Both photo options are shown in the card above. */
+  :global(.sticky-cta) {
+    display: none !important;
+  }
+  @media (max-width: 900px) {
+    :global(body) {
+      padding-bottom: 0 !important;
+    }
+  }
+</style>
